@@ -41,7 +41,7 @@ const ChatPage = ({navigation}) => {
       backgroundColor: '#F9F9F9',
     },
     InputChat: {
-      backgroundColor: 'white',
+      backgroundColor: 'white', 
       borderColor: '#E5E5EA',
       borderRadius: 10,
       width: '80%',
