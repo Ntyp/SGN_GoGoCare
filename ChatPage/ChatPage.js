@@ -56,7 +56,7 @@ const ChatPage = ({navigation}) => {
   });
   return (
     <Container>
-      <View style={{flex: 1}}>
+      <View style={{flex: 1}}>  
         <Header style={styles.HeaderBar}>
           <Left>
             <View>
