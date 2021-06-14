@@ -27,7 +27,7 @@ const RegisGiver1 = ({navigation}) => {
     topBar: {
       display: 'flex',
       backgroundColor: '#00a1ff',
-      paddingBottom: 120,
+      paddingBottom: 125,
     },
     titleText: {
       fontSize: 30,
@@ -85,6 +85,17 @@ const RegisGiver1 = ({navigation}) => {
     fixToText: {
       flexDirection: 'row',
       justifyContent: 'space-between',
+    },
+    BadgeStyle: {
+      backgroundColor: 'white',
+      alignSelf: 'center',
+      left: 50,
+      top: -40,
+      scaleX: 0.8,
+      scaleY: 1.1,
+      borderRadius: 80,
+      width: 40,
+      height: 40,
     },
   });
   return (

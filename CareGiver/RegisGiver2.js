@@ -27,7 +27,7 @@ const RegisGiver2 = ({navigation}) => {
     topBar: {
       display: 'flex',
       backgroundColor: '#00a1ff',
-      paddingBottom: 120,
+      paddingBottom: 125,
     },
     titleText: {
       fontSize: 30,
@@ -54,7 +54,7 @@ const RegisGiver2 = ({navigation}) => {
       backgroundColor: '#00a1ff',
       width: '100%',
       borderRadius: 50,
-      marginTop: 20,
+      marginTop: 10,
     },
     Button1: {
       backgroundColor: '#00ec66',
@@ -69,6 +69,7 @@ const RegisGiver2 = ({navigation}) => {
       borderWidth: 1,
       width: '100%',
       borderRadius: 50,
+      marginTop: 10,
     },
     textButton2: {
       color: '#00a1ff',
@@ -87,10 +88,31 @@ const RegisGiver2 = ({navigation}) => {
       borderColor: '#fff',
       alignSelf: 'center',
       marginTop: 220,
+      shadowColor: '#656565',
+      shadowOffset: {width: 0, height: 2},
+      shadowOpacity: 0.8,
+      shadowRadius: 2,
     },
     fixToText: {
       flexDirection: 'row',
       justifyContent: 'space-between',
+    },
+    BadgeStyle: {
+      backgroundColor: 'white',
+      alignSelf: 'center',
+      left: 50,
+      top: -40,
+      scaleX: 0.8,
+      scaleY: 1.1,
+      borderRadius: 80,
+      width: 40,
+      height: 40,
+    },
+    ShadowColor: {
+      shadowColor: 'rgba(101, 101, 101, 0.15)',
+      shadowOffset: {width: 0, height: 2},
+      shadowOpacity: 0.8,
+      shadowRadius: 2,
     },
   });
 
@@ -117,18 +139,7 @@ const RegisGiver2 = ({navigation}) => {
               style={styles.img}
               source={require('../assets/images/sammy-williams.jpg')}
             />
-            <Badge
-              style={{
-                backgroundColor: 'white',
-                alignSelf: 'center',
-                left: 50,
-                top: -40,
-                scaleX: 0.8,
-                scaleY: 1.1,
-                borderRadius: 80,
-                width: 40,
-                height: 40,
-              }}>
+            <Badge style={styles.BadgeStyle}>
               <Icon
                 name="camera"
                 style={{color: '#C4C4C4'}}
@@ -176,7 +187,7 @@ const RegisGiver2 = ({navigation}) => {
           <Button
             block
             style={styles.Button1}
-            onPress={() => navigation.navigate('ChatPage')}>
+            onPress={() => navigation.navigate('ChatList')}>
             <Text style={{color: 'white', fontWeight: 'bold'}}>
               ยืนยันตัวตน
             </Text>

@@ -33,37 +33,42 @@ const ChatPage = ({navigation}) => {
     NameUser: {
       color: 'black',
       fontSize: 18,
-      alignSelf: 'center',
-      justifyContent: 'center',
-      alignItems: 'center',
     },
     HeaderBar: {
       backgroundColor: '#F9F9F9',
     },
     InputChat: {
-      backgroundColor: 'white', 
+      backgroundColor: 'white',
       borderColor: '#E5E5EA',
       borderRadius: 10,
       width: '80%',
+      height: 45,
+      marginTop: 13,
+      marginLeft: 5,
+      marginRight: 10,
     },
     FooterBar: {
-        height:150,
-      backgroundColor: '#F9F9F9',
+      height: 150,
+      backgroundColor: 'rgba(249, 249, 249, 0.94)',
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'space-between',
     },
+    IconBar: {
+      color: '#18A0FB',
+      marginTop: 20,
+    },
   });
   return (
     <Container>
-      <View style={{flex: 1}}>  
+      <View style={{flex: 1}}>
         <Header style={styles.HeaderBar}>
           <Left>
             <View>
               <Icon
                 name="arrow-back"
-                style={{color: '#18A0FB'}}
-                onPress={() => navigation.navigate('')}
+                style={{color: '#18A0FB', marginTop: 2}}
+                onPress={() => navigation.navigate('ChatList')}
               />
             </View>
           </Left>
@@ -73,7 +78,7 @@ const ChatPage = ({navigation}) => {
           <Right>
             <Icon
               name="ellipsis-horizontal-sharp"
-              style={{color: '#18A0FB'}}
+              style={{color: '#18A0FB', marginTop: 2}}
               onPress={() => navigation.navigate('')}
             />
           </Right>
@@ -85,28 +90,24 @@ const ChatPage = ({navigation}) => {
           <ScrollView></ScrollView>
           <View>
             <Row>
-              
-                <Icon
-                  name="add-sharp"
-                  style={{color: '#18A0FB'}}
-                  onPress={() => navigation.navigate('')}
-                />
-              
-              
-                <TextInput
-                  style={styles.InputChat}
-                  placeholder="Write a comment"
-                  placeholderTextColor="#3C3C43"
-                  onChangeText={text => setChat(text)}
-                />
-              
-              
-                <Icon
-                  name="mic-outline"
-                  style={{color: '#18A0FB'}}
-                  onPress={() => navigation.navigate('')}
-                />
-              
+              <Icon
+                name="add-sharp"
+                style={styles.IconBar}
+                onPress={() => navigation.navigate('')}
+              />
+
+              <TextInput
+                style={styles.InputChat}
+                placeholder="Write a comment"
+                placeholderTextColor="#3C3C43"
+                onChangeText={text => setChat(text)}
+              />
+
+              <Icon
+                name="mic-outline"
+                style={styles.IconBar}
+                onPress={() => navigation.navigate('')}
+              />
             </Row>
           </View>
         </View>

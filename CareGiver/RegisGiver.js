@@ -36,7 +36,7 @@ const RegisGiver = ({navigation}) => {
     topBar: {
       display: 'flex',
       backgroundColor: '#18a0fb',
-      paddingBottom: 120,
+      paddingBottom: 125,
     },
     titleText: {
       fontSize: 30,
@@ -54,22 +54,25 @@ const RegisGiver = ({navigation}) => {
       backgroundColor: '#E5E5E5',
     },
     inputBox: {
-      width: '100%',
+      width: '95%',
       height: 50,
-      backgroundColor: '#E8E8E8',
+      backgroundColor: 'rgba(232, 232, 232, 1)',
       paddingVertical: 10,
       paddingHorizontal: 15,
-      borderColor: '#ccc',
+      borderColor: 'rgba(232, 232, 232, 1)',
       borderWidth: 0.6,
       borderRadius: 8,
       fontSize: 16,
+      marginLeft: 20,
+      marginRight: 20,
       marginBottom: 16,
 
       marginRight: 20,
     },
     Button: {
       backgroundColor: '#18a0fb',
-      width: '100%',
+      width: '95%',
+      marginLeft: 20,
       borderRadius: 50,
     },
     imgView: {
@@ -89,6 +92,17 @@ const RegisGiver = ({navigation}) => {
     fixToText: {
       flexDirection: 'row',
       justifyContent: 'space-between',
+    },
+    BadgeStyle: {
+      backgroundColor: 'white',
+      alignSelf: 'center',
+      left: 50,
+      top: -40,
+      scaleX: 0.8,
+      scaleY: 1.1,
+      borderRadius: 80,
+      width: 40,
+      height: 40,
     },
   });
   return (
@@ -129,7 +143,7 @@ const RegisGiver = ({navigation}) => {
               <Icon
                 name="camera"
                 style={{color: '#C4C4C4'}}
-                onPress={() => navigation.navigate('')}
+                onPress={() => navigation.navigate('Welcome')}
               />
             </Badge>
           </View>
@@ -145,35 +159,35 @@ const RegisGiver = ({navigation}) => {
           <TextInput
             style={styles.inputBox}
             placeholder="ชื่อ-นามสกุล"
-            placeholderTextColor="#c1c1c1"
+            placeholderTextColor="rgba(189, 189, 189, 1)"
             onChangeText={text => setName(text)}
           />
 
           <TextInput
             style={styles.inputBox}
             placeholder="เพศ"
-            placeholderTextColor="#c1c1c1"
+            placeholderTextColor="rgba(189, 189, 189, 1)1"
             onChangeText={text => setSex(text)}
           />
 
           <TextInput
             style={styles.inputBox}
             placeholder="อายุ"
-            placeholderTextColor="#c1c1c1"
+            placeholderTextColor="rgba(189, 189, 189, 1)"
             onChangeText={text => setAge(text)}
           />
 
           <TextInput
             style={styles.inputBox}
             placeholder="เบอร์"
-            placeholderTextColor="#c1c1c1"
+            placeholderTextColor="rgba(189, 189, 189, 1)"
             onChangeText={text => setPhonenum(text)}
           />
 
           <TextInput
             style={styles.inputBox}
             placeholder="ที่อยู่"
-            placeholderTextColor="#c1c1c1"
+            placeholderTextColor="rgba(189, 189, 189, 1)"
             onChangeText={text => setAddress(text)}
           />
 

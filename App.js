@@ -13,7 +13,8 @@ import RegisGiver1 from './CareGiver/RegisGiver1';
 import RegisGiver2 from './CareGiver/RegisGiver2';
 
 import ChatPage from './ChatPage/ChatPage';
-
+import ChatList from './ChatPage/ChatList';
+import PopupCall from './ChatPage/PopupCall';
 
 const Stack = createStackNavigator();
 
@@ -71,7 +72,16 @@ const App = () => {
           component={ChatPage}
           options={{headerShown: false}}
         />
-
+        <Stack.Screen
+          name="ChatList"
+          component={ChatList}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="PopupCall"
+          component={PopupCall}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
