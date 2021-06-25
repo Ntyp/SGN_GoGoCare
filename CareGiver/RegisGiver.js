@@ -66,8 +66,6 @@ const RegisGiver = ({navigation}) => {
       marginLeft: 20,
       marginRight: 20,
       marginBottom: 16,
-
-      marginRight: 20,
     },
     Button: {
       backgroundColor: '#18a0fb',
@@ -98,8 +96,7 @@ const RegisGiver = ({navigation}) => {
       alignSelf: 'center',
       left: 50,
       top: -40,
-      scaleX: 0.8,
-      scaleY: 1.1,
+      transform: [{scaleX: 0.8}, {scaleY: 0.8}],
       borderRadius: 80,
       width: 40,
       height: 40,
@@ -166,7 +163,7 @@ const RegisGiver = ({navigation}) => {
           <TextInput
             style={styles.inputBox}
             placeholder="เพศ"
-            placeholderTextColor="rgba(189, 189, 189, 1)1"
+            placeholderTextColor="rgba(189, 189, 189, 1)"
             onChangeText={text => setSex(text)}
           />
 

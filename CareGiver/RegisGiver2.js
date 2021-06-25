@@ -102,9 +102,10 @@ const RegisGiver2 = ({navigation}) => {
       alignSelf: 'center',
       left: 50,
       top: -40,
-      scaleX: 0.8,
-      scaleY: 1.1,
-      borderRadius: 80,
+      // scaleX: 0.8,
+      // scaleY: 1.1,
+      transform: [{scaleX: 0.8}, {scaleY: 0.8}],
+      borderRadius: 20,
       width: 40,
       height: 40,
     },
@@ -187,7 +188,7 @@ const RegisGiver2 = ({navigation}) => {
           <Button
             block
             style={styles.Button1}
-            onPress={() => navigation.navigate('ChatList')}>
+            onPress={() => navigation.navigate('MessageScreen')}>
             <Text style={{color: 'white', fontWeight: 'bold'}}>
               ยืนยันตัวตน
             </Text>

@@ -63,7 +63,7 @@ const ChatPage = ({navigation}) => {
     <Container>
       <View style={{flex: 1}}>
         <Header style={styles.HeaderBar}>
-          <Left>
+          <Left style={{flex: 1}}>
             <View>
               <Icon
                 name="arrow-back"
@@ -75,7 +75,7 @@ const ChatPage = ({navigation}) => {
           <Body style={{flex: 1}}>
             <Title style={styles.NameUser}>สุจิตรา ศรีสุวานนท์</Title>
           </Body>
-          <Right>
+          <Right style={{flex: 1}}>
             <Icon
               name="ellipsis-horizontal-sharp"
               style={{color: '#18A0FB', marginTop: 2}}
@@ -85,7 +85,7 @@ const ChatPage = ({navigation}) => {
         </Header>
       </View>
       <View style={{flex: 8}}></View>
-      <View style={{flex: 1}}>
+      {/* <View style={{flex: 1}}>
         <View style={styles.FooterBar}>
           <ScrollView></ScrollView>
           <View>
@@ -99,9 +99,7 @@ const ChatPage = ({navigation}) => {
               <TextInput
                 style={styles.InputChat}
                 placeholder="Write a comment"
-                placeholderTextColor="#3C3C43"
-                onChangeText={text => setChat(text)}
-              />
+                placeholderTextColor="#3C3C43" />
 
               <Icon
                 name="mic-outline"
@@ -111,7 +109,7 @@ const ChatPage = ({navigation}) => {
             </Row>
           </View>
         </View>
-      </View>
+      </View> */}
     </Container>
   );
 };

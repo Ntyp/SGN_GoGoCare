@@ -12,9 +12,19 @@ import RegisGiver from './CareGiver/RegisGiver';
 import RegisGiver1 from './CareGiver/RegisGiver1';
 import RegisGiver2 from './CareGiver/RegisGiver2';
 
+import ChatScreen from './ChatPage/ChatScreen';
+import MessageScreen from './ChatPage/MessageScreen';
 import ChatPage from './ChatPage/ChatPage';
-import ChatList from './ChatPage/ChatList';
 import PopupCall from './ChatPage/PopupCall';
+
+import ShowCard from './Wallet/ShowCard';
+import BankDetail from './Wallet/BankDetail';
+import BankAccoutDetail from './Wallet/BankAccoutDetail';
+
+// Profile
+import Profile from './MyProfile/Profile';
+import ProfileSkills from './MyProfile/ProfileSkills';
+import ProfileSetup from './MyProfile/ProfileSetup';
 
 const Stack = createStackNavigator();
 
@@ -68,18 +78,57 @@ const App = () => {
 
         {/* ChatPage */}
         <Stack.Screen
+          name="ChatScreen"
+          component={ChatScreen}
+          options={{headerShown: false}} //Set Username Header 'Chat'
+        />
+        <Stack.Screen
+          name="MessageScreen"
+          component={MessageScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
           name="ChatPage"
           component={ChatPage}
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="ChatList"
-          component={ChatList}
+          name="PopupCall"
+          component={PopupCall}
+          options={{headerShown: false}}
+        />
+
+        {/* Wallet */}
+        <Stack.Screen
+          name="ShowCard"
+          component={ShowCard}
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="PopupCall"
-          component={PopupCall}
+          name="BankDetail"
+          component={BankDetail}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="BankAccoutDetail"
+          component={BankAccoutDetail}
+          options={{headerShown: false}}
+        />
+
+        {/* Profile */}
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ProfileSkills"
+          component={ProfileSkills}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ProfileSetup"
+          component={ProfileSetup}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
