@@ -109,6 +109,42 @@ const Profile = ({navigation}) => {
       alignSelf: 'center',
       marginBottom: 20,
     },
+    GreenBox: {
+      backgroundColor: 'rgba(6, 231, 117, 0.5)',
+      paddingBottom: 5,
+      paddingTop: 5,
+      paddingLeft: 5,
+      paddingRight: 70,
+      borderRadius: 200,
+      alignSelf: 'center',
+      flexDirection: 'row',
+      marginLeft: 20,
+    },
+    GreenText: {
+      color: 'white',
+      fontWeight: 'bold',
+      fontSize: 12,
+      alignSelf: 'center',
+    },
+    GreenIcon: {
+      color: '#fff',
+      fontSize: 18,
+      alignSelf: 'flex-end',
+      marginTop: 2,
+      marginBottom: 2,
+      marginLeft: 2,
+      marginRight: 2,
+    },
+    GreenCircle: {
+      backgroundColor: '#06E775',
+      borderRadius: 300,
+      marginRight: 5,
+      shadowColor: '#000',
+      shadowOffset: {width: 1, height: 1},
+      shadowOpacity: 0.5,
+      shadowRadius: 10,
+      elevation: 5,
+    },
   });
   return (
     <Container>
@@ -170,10 +206,41 @@ const Profile = ({navigation}) => {
                 fontWeight: 'bold',
                 fontSize: 24,
                 alignSelf: 'flex-start',
+                marginBottom: 10,
               }}>
               ลริษา มหสวงศ์
             </Text>
-            <Text style={{alignSelf: 'flex-start'}}>No. 202100001</Text>
+
+            <View
+              style={{
+                flexDirection: 'row',
+                alignSelf: 'center',
+                marginLeft: 30,
+                paddingLeft: 20,
+              }}>
+              <View
+                style={{
+                  alignSelf: 'center',
+                }}>
+                <Text
+                  style={{
+                    alignSelf: 'flex-end',
+                    fontSize: 12,
+                    textAlign: 'center',
+                  }}>
+                  No. 202100001
+                </Text>
+              </View>
+              <View style={styles.GreenBox}>
+                <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+                  <View style={styles.GreenCircle}>
+                    <Icon name="checkmark-outline" style={styles.GreenIcon} />
+                  </View>
+
+                  <Text style={styles.GreenText}>ยืนยันตัวตนแล้ว</Text>
+                </View>
+              </View>
+            </View>
           </Body>
         </View>
 

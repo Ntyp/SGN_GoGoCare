@@ -109,6 +109,42 @@ const ProfileSetup = ({navigation}) => {
       alignSelf: 'center',
       marginBottom: 20,
     },
+    GreenBox: {
+      backgroundColor: 'rgba(6, 231, 117, 0.5)',
+      paddingBottom: 5,
+      paddingTop: 5,
+      paddingLeft: 5,
+      paddingRight: 70,
+      borderRadius: 200,
+      alignSelf: 'center',
+      flexDirection: 'row',
+      marginLeft: 20,
+    },
+    GreenText: {
+      color: 'white',
+      fontWeight: 'bold',
+      fontSize: 12,
+      alignSelf: 'center',
+    },
+    GreenIcon: {
+      color: '#fff',
+      fontSize: 18,
+      alignSelf: 'flex-end',
+      marginTop: 2,
+      marginBottom: 2,
+      marginLeft: 2,
+      marginRight: 2,
+    },
+    GreenCircle: {
+      backgroundColor: '#06E775',
+      borderRadius: 300,
+      marginRight: 5,
+      shadowColor: '#000',
+      shadowOffset: {width: 1, height: 1},
+      shadowOpacity: 0.5,
+      shadowRadius: 10,
+      elevation: 5,
+    },
   });
   return (
     <Container>
@@ -170,57 +206,38 @@ const ProfileSetup = ({navigation}) => {
                 fontWeight: 'bold',
                 fontSize: 24,
                 alignSelf: 'flex-start',
+                marginBottom: 10,
               }}>
               ลริษา มหสวงศ์
             </Text>
-            <View style={{flexDirection: 'row', alignSelf: 'flex-start'}}>
-              <View style={{alignSelf: 'center'}}>
-                <Text style={{alignSelf: 'flex-start', fontSize: 12}}>
+
+            <View
+              style={{
+                flexDirection: 'row',
+                alignSelf: 'center',
+                marginLeft: 30,
+                paddingLeft: 20,
+              }}>
+              <View
+                style={{
+                  alignSelf: 'center',
+                }}>
+                <Text
+                  style={{
+                    alignSelf: 'flex-end',
+                    fontSize: 12,
+                    textAlign: 'center',
+                  }}>
                   No. 202100001
                 </Text>
               </View>
-              <View
-                style={{
-                  backgroundColor: 'rgba(6, 231, 117, 0.5)',
-                  paddingBottom: 14,
-                  paddingTop: 14,
-                  borderRadius: 200,
-                  alignSelf: 'flex-start',
-                  flexDirection: 'row',
-                }}>
-                {/* <Left>
-                  <Icon
-                    name="checkmark-circle"
-                    style={{color: '#06E775', alignSelf: 'flex-end'}}
-                  />
-                </Left>
-                <Right>
-                  <Text
-                    style={{
-                      color: 'white',
-                      fontWeight: 'bold',
-                      fontSize: 12,
-                      alignSelf: 'flex-start',
-                    }}>
-                    ยืนยันตัวตนแล้ว
-                  </Text>
-                </Right> */}
+              <View style={styles.GreenBox}>
+                <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+                  <View style={styles.GreenCircle}>
+                    <Icon name="checkmark-outline" style={styles.GreenIcon} />
+                  </View>
 
-                <View style={{flexDirection: 'row'}}>
-                  <Icon
-                    name="checkmark-circle"
-                    style={{color: '#06E775', alignSelf: 'flex-end'}}
-                  />
-
-                  <Text
-                    style={{
-                      color: 'white',
-                      fontWeight: 'bold',
-                      fontSize: 12,
-                      alignSelf: 'center',
-                    }}>
-                    ยืนยันตัวตนแล้ว
-                  </Text>
+                  <Text style={styles.GreenText}>ยืนยันตัวตนแล้ว</Text>
                 </View>
               </View>
             </View>
