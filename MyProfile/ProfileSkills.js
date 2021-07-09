@@ -1,11 +1,8 @@
 import React from 'react';
-import {View, StyleSheet, FlatList, AsyncStorage, Image} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 import {
   Container,
   Content,
-  Card,
-  CardItem,
-  Thumbnail,
   Text,
   Button,
   Left,
@@ -21,7 +18,6 @@ import {
   Row,
   Col,
 } from 'native-base';
-import {LogoGogo} from '../components/Svg/my-wallet-card';
 const ProfileSkills = ({navigation}) => {
   const styles = StyleSheet.create({
     HeaderStyle: {
@@ -78,7 +74,7 @@ const ProfileSkills = ({navigation}) => {
     RowStyle: {
       marginTop: 20,
       paddingBottom: 20,
-      borderBottomColor: 'rgba(202, 204, 207, 1)',
+      borderBottomColor: '#CACCCF',
       borderBottomWidth: 0.5,
     },
     RowBottom: {
@@ -102,7 +98,7 @@ const ProfileSkills = ({navigation}) => {
       marginLeft: 25,
     },
     Button: {
-      backgroundColor: '#00ec66',
+      backgroundColor: '#18A0FB',
       width: '90%',
       height: 50,
       borderRadius: 50,
@@ -287,7 +283,7 @@ const ProfileSkills = ({navigation}) => {
                   <Text style={styles.Topic}>การยืนยันตัวตน</Text>
                 </Col>
                 <Col>
-                  <Text style={{textAlign: 'left'}}>ผ่านการตรวจสอบแล้ว</Text>
+                  <Text style={{textAlign: 'left'}}>ตรวจสอบแล้ว</Text>
                 </Col>
               </Row>
 
@@ -296,8 +292,13 @@ const ProfileSkills = ({navigation}) => {
                   <Text style={styles.Topic}>ทักษะการดูแลผู้สูงอายุ</Text>
                 </Col>
                 <Col>
-                  <Text style={{textAlign: 'left', alignSelf: 'stretch'}}>
-                    ผ่านการทดสอบแล้ว
+                  <Text
+                    style={{
+                      textAlign: 'left',
+                      alignSelf: 'stretch',
+                      color: 'red',
+                    }}>
+                    ไม่ผ่านเงื่อนไข
                   </Text>
                 </Col>
               </Row>
@@ -307,7 +308,7 @@ const ProfileSkills = ({navigation}) => {
                   <Text style={styles.Topic}>ทัศนคติและบุคลิกภาพ</Text>
                 </Col>
                 <Col>
-                  <Text>ผ่านการทดสอบแล้ว</Text>
+                  <Text style={{color: '#BDBDBD'}}>รอการตรวจสอบ</Text>
                 </Col>
               </Row>
 
@@ -317,7 +318,7 @@ const ProfileSkills = ({navigation}) => {
                 </Col>
                 <Col>
                   <Text style={{textAlign: 'left', alignSelf: 'stretch'}}>
-                    ผ่านการทดสอบแล้ว
+                    ยังไม่มีข้อมูล
                   </Text>
                 </Col>
               </Row>

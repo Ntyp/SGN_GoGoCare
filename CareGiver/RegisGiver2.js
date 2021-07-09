@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native';
 import {
   Container,
@@ -14,9 +14,15 @@ import {
   Header,
   Icon,
   Badge,
+  Row,
+  Col,
+  Grid,
+  Content,
+  CheckBox,
 } from 'native-base';
 
 const RegisGiver2 = ({navigation}) => {
+  const [groupValues, setGroupValues] = useState([]);
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -48,7 +54,7 @@ const RegisGiver2 = ({navigation}) => {
       color: '#c1c1c1',
       fontWeight: 'bold',
       marginLeft: 10,
-      marginTop: 10,
+      marginTop: 15,
     },
     Button: {
       backgroundColor: '#00a1ff',
@@ -57,10 +63,10 @@ const RegisGiver2 = ({navigation}) => {
       marginTop: 10,
     },
     Button1: {
-      backgroundColor: '#00ec66',
+      backgroundColor: '#18A0FB',
       width: '100%',
       borderRadius: 50,
-      marginTop: 10,
+      marginTop: 20,
     },
     Button2: {
       backgroundColor: '#fff',
@@ -97,23 +103,18 @@ const RegisGiver2 = ({navigation}) => {
       flexDirection: 'row',
       justifyContent: 'space-between',
     },
-    BadgeStyle: {
-      backgroundColor: 'white',
-      alignSelf: 'center',
-      left: 50,
-      top: -40,
-      // scaleX: 0.8,
-      // scaleY: 1.1,
-      transform: [{scaleX: 0.8}, {scaleY: 0.8}],
-      borderRadius: 20,
-      width: 40,
-      height: 40,
-    },
     ShadowColor: {
       shadowColor: 'rgba(101, 101, 101, 0.15)',
       shadowOffset: {width: 0, height: 2},
       shadowOpacity: 0.8,
       shadowRadius: 2,
+    },
+    label: {
+      margin: 8,
+    },
+    CheckBoxStyle: {
+      marginRight: 30,
+      borderRadius: 5,
     },
   });
 
@@ -140,7 +141,23 @@ const RegisGiver2 = ({navigation}) => {
               style={styles.img}
               source={require('../assets/images/sammy-williams.jpg')}
             />
-            <Badge style={styles.BadgeStyle}>
+            <Badge
+              style={{
+                backgroundColor: 'white',
+                alignSelf: 'center',
+                left: 50,
+                top: -40,
+                scaleX: 0.9,
+                scaleY: 0.9,
+                borderRadius: 20,
+                width: 40,
+                height: 40,
+                shadowColor: '#000',
+                shadowOffset: {width: 1, height: 1},
+                shadowOpacity: 0.5,
+                shadowRadius: 10,
+                elevation: 5,
+              }}>
               <Icon
                 name="camera"
                 style={{color: '#C4C4C4'}}
@@ -172,19 +189,53 @@ const RegisGiver2 = ({navigation}) => {
             ไม่เคยผ่านการฝึกอบรมในหลักสูตรการดูแลผู้สูงอายุแต่มีประสบการณ์ทำงานไม่ต่ำกว่า
             2 ปี
           </Text>
-          <Button block style={styles.Button}>
-            <Text style={{color: 'white', fontWeight: 'bold'}}>
-              มีประสบการณ์ทำงานในสายงานนี้
-            </Text>
-          </Button>
+
+          <View style={{flexDirection: 'row', marginTop: 15}}>
+            <CheckBox style={styles.CheckBoxStyle} value="Exp" />
+            <Text style={styles.textButton2}>มีประสบการณ์ทำงานในสายงานนี้</Text>
+          </View>
           <Text style={styles.textContent}>
-            ไม่เคยผ่านการฝึกอบรมในหลักสูตรการดูแลผู้สูงอายุ
+            ไม่เคยผ่านการฝึกอบรมในหลักสูตรดูแลผู้สูงอายุ
           </Text>
-          <Button block style={styles.Button}>
-            <Text style={{color: 'white', fontWeight: 'bold'}}>
-              ไม่มีประสบการณ์มาก่อน
-            </Text>
-          </Button>
+          <View style={{flexDirection: 'row', marginTop: 15}}>
+            <CheckBox style={styles.CheckBoxStyle} value="NoExp" />
+            <Text style={styles.textButton2}>ไม่มีประสบการณ์มาก่อน</Text>
+          </View>
+          {/* <Checkbox value="one">Hello world</Checkbox>
+          <Checkbox value="two">Hello world</Checkbox> */}
+
+          {/* <Checkbox.Group onChange={setGroupValues} value={groupValues}>
+            <Checkbox value="Yes">มีประสบการณ์ทำงานในสายงานนี้</Checkbox>
+            <Text>ไม่เคยผ่านการฝึกอบรมในหลักสูตรดูแลผู้สูงอายุ</Text>
+            <Checkbox value="No">ไม่มีประสบการณ์มาก่อน</Checkbox>
+          </Checkbox.Group> */}
+          {/* <Content>
+            <Form>
+              <Grid>
+                <Row>
+                  <Col>
+                    <Text style={{color: '#18A0FB', fontWeight: 'bold'}}>
+                      มีประสบการณ์ทำงานในสายงานนี้
+                    </Text>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Text style={styles.textContent}>
+                      ไม่เคยผ่านการฝึกอบรมในหลักสูตรการดูแลผู้สูงอายุ
+                    </Text>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <Text style={{color: '#18A0FB', fontWeight: 'bold'}}>
+                      ไม่มีประสบการณ์มาก่อน
+                    </Text>
+                  </Col>
+                </Row>
+              </Grid>
+            </Form>
+          </Content> */}
           <Button
             block
             style={styles.Button1}

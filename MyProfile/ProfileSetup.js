@@ -101,7 +101,10 @@ const ProfileSetup = ({navigation}) => {
       marginLeft: 25,
     },
     Button: {
-      backgroundColor: '#00ec66',
+      backgroundColor: '#fff',
+      borderColor: '#00a1ff',
+      color: '#00a1ff',
+      borderWidth: 2,
       width: '90%',
       height: 50,
       borderRadius: 50,
@@ -145,6 +148,9 @@ const ProfileSetup = ({navigation}) => {
       shadowRadius: 10,
       elevation: 5,
     },
+    ColStyle: {paddingLeft: 20},
+    TextColStyle: {alignSelf: 'flex-start', marginLeft: 5, fontWeight: 'bold'},
+    TextMidStyle: {alignSelf: 'flex-start', marginLeft: 20},
   });
   return (
     <Container>
@@ -272,27 +278,11 @@ const ProfileSetup = ({navigation}) => {
         <Form>
           <Grid>
             <Row style={styles.RowStyle}>
-              <Col>
-                <Text style={styles.Topic}>ภาษา/Language</Text>
+              <Col style={styles.ColStyle}>
+                <Text style={styles.TextColStyle}>ภาษา/Language</Text>
               </Col>
-              <Col>
-                <Text style={{alignSelf: 'center'}}>ภาษาไทย</Text>
-              </Col>
-              <Col>
-                <Icon
-                  name="chevron-forward"
-                  style={{color: '#18A0FB', alignSelf: 'center'}}
-                  onPress={() => navigation.navigate('')}
-                />
-              </Col>
-            </Row>
-
-            <Row style={styles.RowStyle}>
-              <Col>
-                <Text style={styles.Topic}>ตั้งค่าแจ้งเตือน</Text>
-              </Col>
-              <Col>
-                <Text style={{alignSelf: 'center'}}>ตั้งค่าดั้งเดิม</Text>
+              <Col style={{paddingLeft: 20}}>
+                <Text style={styles.TextMidStyle}>ภาษาไทย</Text>
               </Col>
               <Col>
                 <Icon
@@ -304,27 +294,11 @@ const ProfileSetup = ({navigation}) => {
             </Row>
 
             <Row style={styles.RowStyle}>
-              <Col>
-                <Text style={styles.Topic}>เปลี่ยนรหัสผ่าน</Text>
+              <Col style={styles.ColStyle}>
+                <Text style={styles.TextColStyle}>ตั้งค่าแจ้งเตือน</Text>
               </Col>
-              <Col>
-                <Text style={{alignSelf: 'center'}}>ไม่ได้ตั้งรหัสผ่าน</Text>
-              </Col>
-              <Col>
-                <Icon
-                  name="chevron-forward"
-                  style={{color: '#18A0FB', alignSelf: 'center'}}
-                  onPress={() => navigation.navigate('')}
-                />
-              </Col>
-            </Row>
-
-            <Row style={styles.RowStyle}>
-              <Col>
-                <Text style={styles.Topic}>วิธีการใช้งาน</Text>
-              </Col>
-              <Col>
-                <Text style={{textAlign: 'left', alignSelf: 'stretch'}}></Text>
+              <Col style={{paddingLeft: 20}}>
+                <Text style={styles.TextMidStyle}>ตั้งค่าดั้งเดิม</Text>
               </Col>
               <Col>
                 <Icon
@@ -336,11 +310,43 @@ const ProfileSetup = ({navigation}) => {
             </Row>
 
             <Row style={styles.RowStyle}>
-              <Col>
-                <Text style={styles.Topic}>ติดต่อเพื่อช่วยเหลือ</Text>
+              <Col style={styles.ColStyle}>
+                <Text style={styles.TextColStyle}>เปลี่ยนรหัสผ่าน</Text>
+              </Col>
+              <Col style={{paddingLeft: 20}}>
+                <Text style={styles.TextMidStyle}>ไม่ได้ตั้งรหัสผ่าน</Text>
               </Col>
               <Col>
-                <Text style={{textAlign: 'left', alignSelf: 'stretch'}}></Text>
+                <Icon
+                  name="chevron-forward"
+                  style={{color: '#18A0FB', alignSelf: 'center'}}
+                  onPress={() => navigation.navigate('')}
+                />
+              </Col>
+            </Row>
+
+            <Row style={styles.RowStyle}>
+              <Col style={styles.ColStyle}>
+                <Text style={styles.TextColStyle}>วิธีการใช้งาน</Text>
+              </Col>
+              <Col>
+                <Text style={styles.TextMidStyle}></Text>
+              </Col>
+              <Col>
+                <Icon
+                  name="chevron-forward"
+                  style={{color: '#18A0FB', alignSelf: 'center'}}
+                  onPress={() => navigation.navigate('')}
+                />
+              </Col>
+            </Row>
+
+            <Row style={styles.RowStyle}>
+              <Col style={styles.ColStyle}>
+                <Text style={styles.TextColStyle}>ติดต่อเพื่อช่วยเหลือ</Text>
+              </Col>
+              <Col>
+                <Text style={styles.TextMidStyle}></Text>
               </Col>
               <Col>
                 <Icon
@@ -356,8 +362,8 @@ const ProfileSetup = ({navigation}) => {
             block
             style={styles.Button}
             onPress={() => navigation.navigate('ProfileSkills')}>
-            <Text style={{color: 'white', fontWeight: 'bold', fontSize: 16}}>
-              บันทึก
+            <Text style={{color: '#00a1ff', fontWeight: 'bold', fontSize: 16}}>
+              ออกจากระบบ
             </Text>
           </Button>
         </Form>

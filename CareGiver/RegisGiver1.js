@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
+import {View, StyleSheet, Text, ActivityIndicator, Image} from 'react-native';
 import {
   Container,
   Item,
@@ -45,10 +45,10 @@ const RegisGiver1 = ({navigation}) => {
       backgroundColor: '#E5E5E5',
     },
     textContent: {
-      color: '#c1c1c1',
+      color: '#000',
       fontWeight: 'bold',
       marginLeft: 10,
-      marginTop: 20,
+
       marginBottom: 10,
     },
     Button: {
@@ -97,6 +97,16 @@ const RegisGiver1 = ({navigation}) => {
       width: 40,
       height: 40,
     },
+    ImgHolder: {
+      width: 130,
+      height: 80,
+      backgroundColor: '#F6F6F6',
+      borderColor: '#E8E8E8',
+      borderWidth: 1,
+      borderRadius: 8,
+      alignSelf: 'center',
+      marginBottom: 10,
+    },
   });
   return (
     <Container>
@@ -127,11 +137,16 @@ const RegisGiver1 = ({navigation}) => {
                 alignSelf: 'center',
                 left: 50,
                 top: -40,
-                scaleX: 0.8,
-                scaleY: 1.1,
-                borderRadius: 80,
+                scaleX: 0.9,
+                scaleY: 0.9,
+                borderRadius: 20,
                 width: 40,
                 height: 40,
+                shadowColor: '#000',
+                shadowOffset: {width: 1, height: 1},
+                shadowOpacity: 0.5,
+                shadowRadius: 10,
+                elevation: 5,
               }}>
               <Icon
                 name="camera"
@@ -152,6 +167,10 @@ const RegisGiver1 = ({navigation}) => {
           <Text style={styles.textContent}>
             กรุณาถ่ายรูปหน้าตรงของคุณเพื่อยืนยันตัวตน
           </Text>
+          <View>
+            <Image source="" style={styles.ImgHolder} />
+            {/* ActivityIndicator It mean Loading Image */}
+          </View>
 
           <Button block style={styles.Button2}>
             <Text style={{color: '#00a1ff', fontWeight: 'bold'}}>
@@ -162,6 +181,9 @@ const RegisGiver1 = ({navigation}) => {
           <Text style={styles.textContent}>
             กรุณาถ่ายรูปบัตรประจำตัวประชาชนของคุณ
           </Text>
+          <View>
+            <Image source="" style={styles.ImgHolder} />
+          </View>
 
           <Button block style={styles.Button2}>
             <Text style={{color: '#00a1ff', fontWeight: 'bold'}}>

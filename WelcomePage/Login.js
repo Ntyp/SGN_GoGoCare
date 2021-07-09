@@ -125,7 +125,7 @@ const Signup = ({navigation}) => {
           <Button rounded style={styles.btnLogIn}>
             <Text
               style={{fontSize: 16, fontWeight: 'bold'}}
-              onPress={() => navigation.navigate('AskLocationService')}>
+              onPress={() => navigation.navigate('RegisUserData1')}>
               Log In
             </Text>
           </Button>

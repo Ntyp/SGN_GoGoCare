@@ -8,6 +8,26 @@ import LogInScreen from './WelcomePage/Login';
 import AskLocationServiceScreen from './WelcomePage/AskLocationService';
 import HomePageScreen from './HomePage/Home';
 
+// Client
+
+// Home
+import HomeClient from './Client/Home/HomeClient';
+import GoHealth from './Client/Home/GoHealth';
+import GoActive from './Client/Home/GoActive';
+
+// Register
+
+import RegisUserData1 from './Client/RegisUserData1';
+import RegisUserData2 from './Client/RegisUserData2';
+import RegisUserData3 from './Client/RegisUserData3';
+
+// Payment
+import Payment from './Client/Payment/Payment';
+import AddCard from './Client/Payment/AddCard';
+import Confirm from './Client/Payment/Confirm';
+
+//
+
 import RegisGiver from './CareGiver/RegisGiver';
 import RegisGiver1 from './CareGiver/RegisGiver1';
 import RegisGiver2 from './CareGiver/RegisGiver2';
@@ -53,6 +73,57 @@ const App = () => {
           options={{headerShown: false}}
         />
 
+        {/* Client */}
+
+        {/* Home */}
+        <Stack.Screen
+          name="HomeClient"
+          component={HomeClient}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="GoHealth"
+          component={GoHealth}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="GoActive"
+          component={GoActive}
+          options={{headerShown: false}}
+        />
+
+        {/* Register */}
+        <Stack.Screen
+          name="RegisUserData1"
+          component={RegisUserData1}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="RegisUserData2"
+          component={RegisUserData2}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="RegisUserData3"
+          component={RegisUserData3}
+          options={{headerShown: false}}
+        />
+        {/* Payment */}
+        <Stack.Screen
+          name="Payment"
+          component={Payment}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="AddCard"
+          component={AddCard}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Confirm"
+          component={Confirm}
+          options={{headerShown: false}}
+        />
         {/* CareGiver */}
 
         <Stack.Screen

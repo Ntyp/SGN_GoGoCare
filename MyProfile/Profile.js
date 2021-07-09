@@ -3,9 +3,6 @@ import {View, StyleSheet, FlatList, AsyncStorage, Image} from 'react-native';
 import {
   Container,
   Content,
-  Card,
-  CardItem,
-  Thumbnail,
   Text,
   Button,
   Left,
@@ -101,7 +98,7 @@ const Profile = ({navigation}) => {
       marginLeft: 25,
     },
     Button: {
-      backgroundColor: '#00ec66',
+      backgroundColor: '#18A0FB',
       width: '90%',
       height: 50,
       borderRadius: 50,
@@ -271,14 +268,6 @@ const Profile = ({navigation}) => {
 
       <Content noShadow>
         <Form>
-          {/* <Left style={{marginLeft: 20}}>
-              <Text style={{fontWeight: 'bold'}}>ชื่อผู้ใช้</Text>
-            </Left>
-            <Body>
-              <Text style={{textAlign: 'left', alignSelf: 'stretch'}}>
-                ลริษา มหสวงศ์
-              </Text>
-            </Body> */}
           <Grid>
             <Row style={styles.RowStyle}>
               <Col>
@@ -347,21 +336,6 @@ const Profile = ({navigation}) => {
               </Col>
             </Row>
           </Grid>
-
-          {/* <View style={{flex: 1, flexDirection: 'row'}}>
-            <Left style={{marginLeft: 20}}></Left>
-            <Body style={{backgroundColor: 'red', paddingRight: 100}}></Body>
-          </View>
-
-          <View style={{flex: 1, flexDirection: 'row'}}>
-            <Left style={{marginLeft: 20}}></Left>
-            <Body></Body>
-          </View> */}
-
-          {/* <View style={{flex: 1, flexDirection: 'row'}}>
-            <Left style={{marginLeft: 20}}></Left>
-            <Body></Body>
-          </View> */}
 
           <Button
             block

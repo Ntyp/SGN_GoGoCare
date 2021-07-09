@@ -56,10 +56,10 @@ const RegisGiver = ({navigation}) => {
     inputBox: {
       width: '95%',
       height: 50,
-      backgroundColor: 'rgba(232, 232, 232, 1)',
+      backgroundColor: '#FFFFFF',
       paddingVertical: 10,
       paddingHorizontal: 15,
-      borderColor: 'rgba(232, 232, 232, 1)',
+      borderColor: '#E8E8E8',
       borderWidth: 0.6,
       borderRadius: 8,
       fontSize: 16,
@@ -86,6 +86,7 @@ const RegisGiver = ({navigation}) => {
       borderColor: '#fff',
       alignSelf: 'center',
       marginTop: 220,
+      backgroundColor: '#D1D5DB',
     },
     fixToText: {
       flexDirection: 'row',
@@ -121,21 +122,23 @@ const RegisGiver = ({navigation}) => {
           </Header>
 
           <View style={styles.imgView}>
-            <Image
-              style={styles.img}
-              source={require('../assets/images/sammy-williams.jpg')}
-            />
+            <Image style={styles.img} source="" />
             <Badge
               style={{
                 backgroundColor: 'white',
                 alignSelf: 'center',
                 left: 50,
                 top: -40,
-                scaleX: 0.8,
-                scaleY: 1.1,
-                borderRadius: 80,
+                scaleX: 0.9,
+                scaleY: 0.9,
+                borderRadius: 20,
                 width: 40,
                 height: 40,
+                shadowColor: '#000',
+                shadowOffset: {width: 1, height: 1},
+                shadowOpacity: 0.5,
+                shadowRadius: 10,
+                elevation: 5,
               }}>
               <Icon
                 name="camera"
@@ -156,35 +159,35 @@ const RegisGiver = ({navigation}) => {
           <TextInput
             style={styles.inputBox}
             placeholder="ชื่อ-นามสกุล"
-            placeholderTextColor="rgba(189, 189, 189, 1)"
+            placeholderTextColor="#BDBDBD"
             onChangeText={text => setName(text)}
           />
 
           <TextInput
             style={styles.inputBox}
             placeholder="เพศ"
-            placeholderTextColor="rgba(189, 189, 189, 1)"
+            placeholderTextColor="#BDBDBD"
             onChangeText={text => setSex(text)}
           />
 
           <TextInput
             style={styles.inputBox}
             placeholder="อายุ"
-            placeholderTextColor="rgba(189, 189, 189, 1)"
+            placeholderTextColor="#BDBDBD"
             onChangeText={text => setAge(text)}
           />
 
           <TextInput
             style={styles.inputBox}
             placeholder="เบอร์"
-            placeholderTextColor="rgba(189, 189, 189, 1)"
+            placeholderTextColor="#BDBDBD"
             onChangeText={text => setPhonenum(text)}
           />
 
           <TextInput
             style={styles.inputBox}
             placeholder="ที่อยู่"
-            placeholderTextColor="rgba(189, 189, 189, 1)"
+            placeholderTextColor="#BDBDBD"
             onChangeText={text => setAddress(text)}
           />
 
@@ -194,7 +197,6 @@ const RegisGiver = ({navigation}) => {
             onPress={() => navigation.navigate('RegisGiver1')}>
             <Text style={{color: 'white', fontWeight: 'bold'}}>ถัดไป</Text>
           </Button>
-          <Button />
         </Form>
       </View>
     </Container>
