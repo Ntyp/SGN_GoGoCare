@@ -26,7 +26,16 @@ import Payment from './Client/Payment/Payment';
 import AddCard from './Client/Payment/AddCard';
 import Confirm from './Client/Payment/Confirm';
 
-//
+// Profile
+import ProfileClient from './Client/Profile/ProfileClient';
+import ProfileClient1 from './Client/Profile/ProfileClient1';
+import ProfileClient2 from './Client/Profile/ProfileClient2';
+import ProfileClientSetting from './Client/Profile/ProfileClientSetting';
+
+// Booking
+import Booking from './Client/Booking/Booking';
+
+//CareGiver
 
 import RegisGiver from './CareGiver/RegisGiver';
 import RegisGiver1 from './CareGiver/RegisGiver1';
@@ -72,9 +81,7 @@ const App = () => {
           component={AskLocationServiceScreen}
           options={{headerShown: false}}
         />
-
         {/* Client */}
-
         {/* Home */}
         <Stack.Screen
           name="HomeClient"
@@ -91,7 +98,6 @@ const App = () => {
           component={GoActive}
           options={{headerShown: false}}
         />
-
         {/* Register */}
         <Stack.Screen
           name="RegisUserData1"
@@ -124,8 +130,36 @@ const App = () => {
           component={Confirm}
           options={{headerShown: false}}
         />
-        {/* CareGiver */}
+        {/* Booking */}
+        <Stack.Screen
+          name="Booking"
+          component={Booking}
+          options={{headerShown: false}}
+        />
+        {/* ProfileClient */}
 
+        <Stack.Screen
+          name="ProfileClient"
+          component={ProfileClient}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ProfileClient1"
+          component={ProfileClient1}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ProfileClient2"
+          component={ProfileClient2}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ProfileClientSetting"
+          component={ProfileClientSetting}
+          options={{headerShown: false}}
+        />
+
+        {/* CareGiver */}
         <Stack.Screen
           name="RegisGiver"
           component={RegisGiver}
@@ -146,7 +180,6 @@ const App = () => {
           component={HomePageScreen}
           options={{headerShown: false}}
         />
-
         {/* ChatPage */}
         <Stack.Screen
           name="ChatScreen"
@@ -168,7 +201,6 @@ const App = () => {
           component={PopupCall}
           options={{headerShown: false}}
         />
-
         {/* Wallet */}
         <Stack.Screen
           name="ShowCard"
@@ -185,7 +217,6 @@ const App = () => {
           component={BankAccoutDetail}
           options={{headerShown: false}}
         />
-
         {/* Profile */}
         <Stack.Screen
           name="Profile"

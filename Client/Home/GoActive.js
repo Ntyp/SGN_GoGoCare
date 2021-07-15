@@ -1,5 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Image, TextInput} from 'react-native';
+import GoGoActiveHeader from '../../components/Img/GoGoActive-Header.jpg';
+import FooterBar_Client from '../../components/Footer';
 import {
   Container,
   Content,
@@ -83,14 +85,14 @@ const GoActive = ({navigation}) => {
           </Badge>
         </Right>
       </Header>
-      <View
+      <Image
+        source={require('../../components/Img/GoGoActive-Header.jpg')}
         style={{
-          height: 155,
           width: '100%',
-          backgroundColor: '#D1D5DB',
-          alignSelf: 'center',
+          height: 154,
           marginBottom: 30,
-        }}></View>
+        }}></Image>
+
       <Content>
         <Form style={{marginLeft: 20, marginRight: 20}}>
           <Text
@@ -194,50 +196,7 @@ const GoActive = ({navigation}) => {
         </Form>
       </Content>
       {/* Footer */}
-      <Footer noShadow style={styles.FooterBar}>
-        <FooterTab noShadow style={styles.FooterBar}>
-          <Button vertical>
-            <Icon
-              name="home"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('HomeClient')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 15}}>Home</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="md-wallet"
-              style={{color: '#18A0FB'}}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#18A0FB', marginBottom: 15}}>Wallet</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="ios-receipt"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 15}}>My Jobs</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="md-chatbox-ellipses"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 15}}>Chat</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="md-person"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 10}}>Profile</Text>
-          </Button>
-        </FooterTab>
-      </Footer>
+      <FooterBar_Client></FooterBar_Client>
     </Container>
   );
 };

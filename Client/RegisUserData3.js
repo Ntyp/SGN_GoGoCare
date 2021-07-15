@@ -1,5 +1,7 @@
 import React from 'react';
-import {View, StyleSheet, Image, TextInput} from 'react-native';
+import FooterBar_Client from '../components/Footer';
+import {IconMap, IconClock} from '../components/Svg/Client/Icon-Register';
+import {View, StyleSheet, Image, TextInput, Picker} from 'react-native';
 import {
   Container,
   Content,
@@ -19,7 +21,6 @@ import {
   Col,
   Item,
   Input,
-  Picker,
   Textarea,
 } from 'native-base';
 const RegisUserData3 = ({navigation}) => {
@@ -42,6 +43,11 @@ const RegisUserData3 = ({navigation}) => {
     },
     IconBar: {
       color: '#C3C3C3',
+    },
+    IconMain: {
+      color: '#18A0FB',
+      alignSelf: 'center',
+      fontSize: 20,
     },
     FooterBar: {
       height: 85,
@@ -106,35 +112,41 @@ const RegisUserData3 = ({navigation}) => {
             }}>
             กรุณาเลือก วัน เวลา โรงพยาบาลและสถานที่ไป-กลับ
           </Text>
+          <View style={{flexDirection: 'row'}}>
+            <View style={{flex: 2}}>
+              <Text
+                style={{fontSize: 12, fontWeight: 'bold', marginBottom: 15}}>
+                วันและเวลา ที่ต้องการให้ไปรับ
+              </Text>
+              <TextInput
+                style={styles.inputBox}
+                placeholder="วันและเวลา ที่ต้องการให้ไปรับ"
+                placeholderTextColor="#BDBDBD"
+                // onChangeText={text => setAge(text)}
+              />
+            </View>
+            <View style={{flex: 1}}>
+              <Text
+                style={{
+                  fontSize: 12,
+                  fontWeight: 'bold',
+                  alignSelf: 'flex-start',
+                  marginBottom: 15,
+                }}>
+                เวลานัดที่รพ.
+              </Text>
+              <TextInput
+                style={styles.inputBox}
+                placeholder="เวลานัดที่รพ."
+                placeholderTextColor="#BDBDBD"
+                // onChangeText={text => setAge(text)}
+              />
+            </View>
+          </View>
           <Grid>
-            <Row>
-              <Col>
-                <Text>วันและเวลา ที่ต้องการให้ไปรับ</Text>
-              </Col>
-              <Col>
-                <Text>เวลานัดที่รพ.</Text>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <TextInput
-                  style={styles.inputBox}
-                  placeholder="วันและเวลา ที่ต้องการให้ไปรับ"
-                  placeholderTextColor="#BDBDBD"
-                  // onChangeText={text => setAge(text)}
-                />
-              </Col>
-              <Col>
-                <TextInput
-                  style={styles.inputBox}
-                  placeholder="เวลานัดที่รพ."
-                  placeholderTextColor="#BDBDBD"
-                  // onChangeText={text => setAge(text)}
-                />
-              </Col>
-            </Row>
             <Text>สถานที่รับ</Text>
-            <Row>
+
+            {/* <Row>
               <Col>
                 <TextInput
                   style={styles.inputBox}
@@ -143,25 +155,51 @@ const RegisUserData3 = ({navigation}) => {
                   // onChangeText={text => setAge(text)}
                 />
               </Col>
-            </Row>
-            <Row>
-              <Col>
-                <View
+            </Row> */}
+            <View style={{flexDirection: 'row'}}>
+              <View style={{flex: 4, flexDirection: 'row'}}>
+                <TextInput
+                  style={styles.inputBox}
+                  placeholder="สถานที่รับ"
+                  placeholderTextColor="#BDBDBD"
+                  // onChangeText={text => setAge(text)}
+                />
+              </View>
+              <View style={{alignSelf: 'flex-start'}}>
+                <Button
                   style={{
-                    width: 20,
-                    height: 20,
-                    backgroundColor: '#18A0FB',
-                    borderRadius: 3,
-                    borderColor: '#E8E8E8',
+                    width: 51,
+                    height: 51,
+                    backgroundColor: '#fff',
                     borderWidth: 1,
-                  }}></View>
-              </Col>
-              <Col>
-                <Text>สถานที่ไปรับและกลับที่เดียวกัน</Text>
-              </Col>
-              <Col></Col>
-            </Row>
-            <Text>โรงพยาบาล</Text>
+                    borderColor: '#E8E8E8',
+                    borderRadius: 8,
+                  }}
+                  onPress={() => navigation.navigate('')}>
+                  <Icon name="search-sharp" style={styles.IconMain} />
+                </Button>
+              </View>
+            </View>
+            <Picker>
+              <Picker.Item label="สถานที่ไปรับและกลับที่เดียวกัน" />
+            </Picker>
+            <View style={{flexDirection: 'row', marginBottom: 20}}>
+              <View
+                style={{
+                  width: 20,
+                  height: 20,
+                  backgroundColor: '#18A0FB',
+                  borderRadius: 3,
+                  borderColor: '#E8E8E8',
+                  borderWidth: 1,
+                }}></View>
+              <View>
+                <Text style={{marginLeft: 10}}>
+                  สถานที่ไปรับและกลับที่เดียวกัน
+                </Text>
+              </View>
+            </View>
+            <Text style={{marginBottom: 10}}>โรงพยาบาล</Text>
             <Row>
               <Col>
                 <TextInput
@@ -219,50 +257,7 @@ const RegisUserData3 = ({navigation}) => {
         </Form>
       </Content>
       {/* Footer */}
-      <Footer noShadow style={styles.FooterBar}>
-        <FooterTab noShadow style={styles.FooterBar}>
-          <Button vertical>
-            <Icon
-              name="home"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('HomeClient')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 15}}>Home</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="md-wallet"
-              style={{color: '#18A0FB'}}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#18A0FB', marginBottom: 15}}>Wallet</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="ios-receipt"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 15}}>My Jobs</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="md-chatbox-ellipses"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 15}}>Chat</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="md-person"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 10}}>Profile</Text>
-          </Button>
-        </FooterTab>
-      </Footer>
+      <FooterBar_Client></FooterBar_Client>
     </Container>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import FooterBar_Client from '../components/Footer';
 import {View, StyleSheet, Image, TextInput} from 'react-native';
 import {
   Container,
@@ -125,24 +126,26 @@ const RegisUserData2 = ({navigation}) => {
             กรุณาติดต่อพูดคุยกับผู้ดูแลโดยตรงเพื่อความสะดวก
           </Text>
           <Grid>
-            <Row>
+            <Row style={{marginTop: 30}}>
               <Col>
-                <Button
-                  style={{
-                    width: 140,
-                    height: 50,
-                    backgroundColor: '#fff',
-                    borderColor: '#18a0fb',
-                    borderWidth: 1,
-                    borderRadius: 100,
-                    justifyContent: 'center',
-                    alignSelf: 'center',
-                  }}
-                  onPress={() => navigation.navigate('RegisUserData1')}>
-                  <Text style={{color: '#18a0fb', fontWeight: 'bold'}}>
-                    กลับ
-                  </Text>
-                </Button>
+                <View>
+                  <Button
+                    style={{
+                      width: 140,
+                      height: 50,
+                      backgroundColor: '#fff',
+                      borderColor: '#18a0fb',
+                      borderWidth: 1,
+                      borderRadius: 100,
+                      justifyContent: 'center',
+                      alignSelf: 'center',
+                    }}
+                    onPress={() => navigation.navigate('RegisUserData1')}>
+                    <Text style={{color: '#18a0fb', fontWeight: 'bold'}}>
+                      กลับ
+                    </Text>
+                  </Button>
+                </View>
               </Col>
               <Col>
                 <Button
@@ -163,50 +166,7 @@ const RegisUserData2 = ({navigation}) => {
         </Form>
       </Content>
       {/* Footer */}
-      <Footer noShadow style={styles.FooterBar}>
-        <FooterTab noShadow style={styles.FooterBar}>
-          <Button vertical>
-            <Icon
-              name="home"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('HomeClient')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 15}}>Home</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="md-wallet"
-              style={{color: '#18A0FB'}}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#18A0FB', marginBottom: 15}}>Wallet</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="ios-receipt"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 15}}>My Jobs</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="md-chatbox-ellipses"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 15}}>Chat</Text>
-          </Button>
-          <Button vertical>
-            <Icon
-              name="md-person"
-              style={styles.IconBar}
-              onPress={() => navigation.navigate('')}
-            />
-            <Text style={{color: '#C3C3C3', marginBottom: 10}}>Profile</Text>
-          </Button>
-        </FooterTab>
-      </Footer>
+      <FooterBar_Client></FooterBar_Client>
     </Container>
   );
 };
