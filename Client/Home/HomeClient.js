@@ -105,8 +105,8 @@ const HomeClient = ({navigation}) => {
           </Badge>
         </Right>
       </Header>
+      <ImgHeader></ImgHeader>
       <Content>
-        <ImgHeader></ImgHeader>
         <Form style={{marginLeft: 20, marginRight: 20}}>
           <ImageBackground
             source={require('../../components/Img/GoGoHealth.jpg')}

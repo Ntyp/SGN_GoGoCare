@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
 import FooterBar_Client from '../../components/Footer';
+import ModalDropdown from 'react-native-modal-dropdown';
+import {
+  IconBankkokBank,
+  IconScbBank,
+  IconKBank,
+} from '../../components/Svg/Client/Icon-Payment';
 import {View, StyleSheet, Image, TextInput, Picker} from 'react-native';
 import {
   Container,
@@ -23,28 +29,8 @@ import {
 } from 'native-base';
 const Payment = ({navigation}) => {
   const [Bank, setBank] = useState(''); //ธนาคาร
+  const BankList = ['กสิกรไทย', 'ไทยพาณิชย์', 'กรุงเทพ'];
   const styles = StyleSheet.create({
-    GreenIcon: {
-      color: '#fff',
-      fontSize: 18,
-      alignSelf: 'flex-end',
-      marginTop: 2,
-      marginBottom: 2,
-      marginLeft: 2,
-      marginRight: 2,
-    },
-    GreenCircle: {
-      backgroundColor: '#06E775',
-      width: 23,
-      height: 23,
-      borderRadius: 300,
-      marginRight: 5,
-      shadowColor: '#000',
-      shadowOffset: {width: 1, height: 1},
-      shadowOpacity: 0.5,
-      shadowRadius: 10,
-      elevation: 5,
-    },
     TextBlack: {
       fontSize: 14,
       fontWeight: 'bold',
@@ -69,12 +55,61 @@ const Payment = ({navigation}) => {
       marginBottom: 20,
       justifyContent: 'center',
     },
+    GreenIcon: {
+      color: '#fff',
+      alignSelf: 'center',
+      marginTop: 2,
+      borderRadius: 100,
+      fontSize: 20,
+      textAlign: 'center',
+    },
+    GreenCircle: {
+      borderRadius: 300,
+      width: 28,
+      height: 28,
+      backgroundColor: '#06E775',
+      alignSelf: 'flex-end',
+      shadowColor: '#000',
+      shadowOffset: {width: 1, height: 1},
+      shadowOpacity: 0.5,
+      shadowRadius: 10,
+      elevation: 5,
+      textAlign: 'center',
+    },
     IconBar: {
       color: '#C3C3C3',
     },
     FooterBar: {
       height: 85,
       backgroundColor: 'rgba(249, 249, 249, 0.94)',
+    },
+    DropdownStyle: {
+      width: 110,
+      height: 60,
+      borderRadius: 5,
+      textAlign: 'center',
+      alignSelf: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderColor: '#E2E2E2',
+      borderWidth: 1,
+    },
+    DropdownText: {
+      marginVertical: 10,
+      marginHorizontal: 6,
+      fontSize: 12,
+      fontWeight: 'bold',
+      color: '#18A0FB',
+      textAlign: 'center',
+      textAlignVertical: 'center',
+    },
+    DropdownList: {
+      width: 110,
+      borderColor: '#E2E2E2',
+      borderWidth: 1,
+      borderRadius: 5,
+      alignItems: 'center',
+      alignSelf: 'center',
     },
   });
   return (
@@ -168,12 +203,10 @@ const Payment = ({navigation}) => {
                     Expires 10/25
                   </Text>
                 </Body>
-                <Right>
-                  <Icon
-                    name="add"
-                    style={{color: 'rgba(24, 160, 251, 1)'}}
-                    onPress={() => navigation.navigate('RegisGiver')}
-                  />
+                <Right style={{alignSelf: 'center'}}>
+                  <View style={styles.GreenCircle}>
+                    <Icon name="checkmark-outline" style={styles.GreenIcon} />
+                  </View>
                 </Right>
               </Body>
             </CardItem>
@@ -206,9 +239,20 @@ const Payment = ({navigation}) => {
           </Card>
           <Card style={styles.CardAddBank}>
             <CardItem>
-              <View style={{flexDirection: 'row'}}>
-                <Text style={styles.TextBlue}>MOBILE BANKING</Text>
-              </View>
+              <Body style={{flexDirection: 'row'}}>
+                <Left>
+                  <Text style={styles.TextBlue}>MOBILE BANKING</Text>
+                </Left>
+                <Body></Body>
+                <Right>
+                  <ModalDropdown
+                    style={styles.DropdownStyle}
+                    textStyle={styles.DropdownText}
+                    dropdownStyle={styles.DropdownList}
+                    options={BankList}
+                  />
+                </Right>
+              </Body>
               {/* <Body
                 style={{
                   flex: 1,

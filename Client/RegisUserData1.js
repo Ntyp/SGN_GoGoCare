@@ -57,6 +57,40 @@ const RegisUserData1 = ({navigation}) => {
       fontSize: 16,
       marginBottom: 16,
     },
+    inputStyle: {
+      width: '100%',
+      height: 50,
+      backgroundColor: '#FFFFFF',
+      justifyContent: 'center',
+      borderColor: '#E8E8E8',
+      borderWidth: 0.6,
+      borderRadius: 8,
+      fontSize: 16,
+      marginBottom: 16,
+    },
+    inputStyle1: {
+      width: 310,
+      height: 50,
+      backgroundColor: '#FFFFFF',
+      justifyContent: 'center',
+      borderColor: '#E8E8E8',
+      borderWidth: 0.6,
+      borderRadius: 8,
+      fontSize: 16,
+      marginBottom: 16,
+    },
+    IconStyle: {
+      color: '#18A0FB',
+      textAlign: 'center',
+    },
+    ButtonStyle1: {
+      width: 50,
+      height: 50,
+      backgroundColor: '#fff',
+      borderRadius: 8,
+      alignSelf: 'flex-end',
+      position: 'absolute',
+    },
     imgView: {
       flex: 1,
       flexDirection: 'column',
@@ -252,21 +286,34 @@ const RegisUserData1 = ({navigation}) => {
           </Grid>
 
           <View style={{flex: 1, flexDirection: 'row'}}>
-            <Picker
-              selectedValue={Disease}
-              style={{height: 50, width: '87%'}}
-              onValueChange={(itemValue, itemIndex) => setDisease(itemValue)}>
-              <Picker.Item label="โรคไต" value="Kidney" />
-              <Picker.Item label="โรคความดัน" value="Hypertension" />
-            </Picker>
+            <View style={styles.inputStyle1}>
+              <View style={{flexDirection: 'row'}}>
+                <Picker
+                  selectedValue={Disease}
+                  style={{height: 50, width: '100%'}}
+                  onValueChange={(itemValue, itemIndex) =>
+                    setDisease(itemValue)
+                  }>
+                  <Picker.Item label="โรคไต" value="Kidney" />
+                  <Picker.Item label="โรคความดัน" value="Hypertension" />
+                </Picker>
+                <View>
+                  <Button style={styles.ButtonStyle1}>
+                    <Icon name="chevron-down-sharp" style={styles.IconStyle} />
+                  </Button>
+                </View>
+              </View>
+            </View>
 
-            <Button style={styles.ButtonStyle}>
-              <Icon
-                name="add"
-                style={{color: '#18A0FB', textAlign: 'center'}}
-                onPress={() => navigation.navigate('')}
-              />
-            </Button>
+            <View style={{alignContent: 'flex-end'}}>
+              <Button style={styles.ButtonStyle}>
+                <Icon
+                  name="add"
+                  style={{color: '#18A0FB', textAlign: 'center'}}
+                  onPress={() => navigation.navigate('')}
+                />
+              </Button>
+            </View>
           </View>
 
           <Text
@@ -315,21 +362,31 @@ const RegisUserData1 = ({navigation}) => {
             สิทธิในการเข้ารับการรักษา
           </Text>
 
-          <View
+          {/* <View
             style={{
               borderWidth: 1,
               borderColor: '#E8E8E8',
               borderRadius: 8,
             }}>
-            <Picker
-              selectedValue={RightToMedicalCare}
-              style={{height: 50, width: '100%'}}
-              onValueChange={(itemValue, itemIndex) =>
-                setRightToMedicalCare(itemValue)
-              }>
-              <Picker.Item label="บัตรทอง" value="GoldCard" />
-              <Picker.Item label="ประกันสังคม" value="SocialSecurity" />
-            </Picker>
+            
+          </View> */}
+          <View style={styles.inputStyle}>
+            <View style={{flexDirection: 'row'}}>
+              <Picker
+                selectedValue={RightToMedicalCare}
+                style={{height: 50, width: '100%'}}
+                onValueChange={(itemValue, itemIndex) =>
+                  setRightToMedicalCare(itemValue)
+                }>
+                <Picker.Item label="บัตรทอง" value="GoldCard" />
+                <Picker.Item label="ประกันสังคม" value="SocialSecurity" />
+              </Picker>
+              <View>
+                <Button style={styles.ButtonStyle1}>
+                  <Icon name="chevron-down-sharp" style={styles.IconStyle} />
+                </Button>
+              </View>
+            </View>
           </View>
 
           <Text
