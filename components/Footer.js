@@ -68,7 +68,7 @@ const FooterBar_Client = ({home, history, gogonow, chat, profile}) => {
         <Button
           vertical
           style={{marginBottom: 15}}
-          onPress={() => navigation.navigate('')}>
+          onPress={() => navigation.navigate('MessageScreen')}>
           <IconChat current={chat} />
           <Text
             style={

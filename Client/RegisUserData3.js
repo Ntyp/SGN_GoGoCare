@@ -1,7 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import FooterBar_Client from '../components/Footer';
-import {IconMap, IconClock} from '../components/Svg/Client/Icon-Register';
-import {View, StyleSheet, Image, TextInput, Picker} from 'react-native';
+import {
+  IconCalendar,
+  IconClock,
+  IconLine,
+  IconLocation,
+  ViewCalendar,
+  ViewTime,
+} from '../components/Svg/Client/Icon-Register';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Picker,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
+import {RadioButton} from 'react-native-paper';
 import {
   Container,
   Content,
@@ -12,18 +27,18 @@ import {
   Right,
   Icon,
   Header,
-  Footer,
-  FooterTab,
   Badge,
   Form,
   Grid,
   Row,
   Col,
   Item,
-  Input,
-  Textarea,
 } from 'native-base';
 const RegisUserData3 = ({navigation}) => {
+  const [Hospital, setHospital] = useState('');
+  const [GetPlace, setGetPlace] = useState('');
+  const [SendPlace, setSendPlace] = useState('');
+  const [CheckGoBack, setCheckGoBack] = useState('');
   const styles = StyleSheet.create({
     inputBox: {
       width: '95%',
@@ -31,6 +46,17 @@ const RegisUserData3 = ({navigation}) => {
       backgroundColor: '#FFFFFF',
       paddingVertical: 10,
       paddingHorizontal: 15,
+      borderColor: '#E8E8E8',
+      borderWidth: 0.6,
+      borderRadius: 8,
+      fontSize: 16,
+      marginBottom: 16,
+    },
+    inputStyle: {
+      width: '95%',
+      height: 50,
+      backgroundColor: '#FFFFFF',
+      justifyContent: 'center',
       borderColor: '#E8E8E8',
       borderWidth: 0.6,
       borderRadius: 8,
@@ -49,9 +75,29 @@ const RegisUserData3 = ({navigation}) => {
       alignSelf: 'center',
       fontSize: 20,
     },
-    FooterBar: {
-      height: 85,
-      backgroundColor: 'rgba(249, 249, 249, 0.94)',
+    IconStyle: {
+      color: '#18A0FB',
+      textAlign: 'center',
+    },
+    ButtonStyle: {
+      width: 50,
+      height: 50,
+      backgroundColor: '#fff',
+      borderRadius: 8,
+    },
+    CheckBox: {
+      width: 20,
+      height: 20,
+      backgroundColor: '#FFFFFF',
+      borderColor: '#E8E8E8',
+      borderWidth: 1,
+      borderRadius: 3,
+    },
+    CheckBoxPress: {
+      width: 20,
+      height: 20,
+      backgroundColor: '#18A0FB',
+      borderRadius: 3,
     },
   });
   return (
@@ -118,12 +164,42 @@ const RegisUserData3 = ({navigation}) => {
                 style={{fontSize: 12, fontWeight: 'bold', marginBottom: 15}}>
                 วันและเวลา ที่ต้องการให้ไปรับ
               </Text>
-              <TextInput
-                style={styles.inputBox}
-                placeholder="วันและเวลา ที่ต้องการให้ไปรับ"
-                placeholderTextColor="#BDBDBD"
-                // onChangeText={text => setAge(text)}
-              />
+              <View style={styles.inputStyle}>
+                <View style={{flexDirection: 'row'}}>
+                  <View style={{flex: 1, flexDirection: 'row'}}>
+                    <View
+                      style={{
+                        alignSelf: 'center',
+                        marginRight: 5,
+                        marginLeft: 10,
+                      }}>
+                      <IconCalendar></IconCalendar>
+                    </View>
+                    <TextInput
+                      style={{
+                        height: '80%',
+                        width: '70%',
+                        alignSelf: 'center',
+                      }}></TextInput>
+                  </View>
+                  <View
+                    style={{flex: 0.09, alignSelf: 'center', marginRight: 3}}>
+                    <IconLine></IconLine>
+                  </View>
+
+                  <View style={{flex: 1, flexDirection: 'row'}}>
+                    <View style={{alignSelf: 'center', marginRight: 5}}>
+                      <IconClock></IconClock>
+                    </View>
+                    <TextInput
+                      style={{
+                        height: '80%',
+                        width: '70%',
+                        alignSelf: 'center',
+                      }}></TextInput>
+                  </View>
+                </View>
+              </View>
             </View>
             <View style={{flex: 1}}>
               <Text
@@ -135,81 +211,122 @@ const RegisUserData3 = ({navigation}) => {
                 }}>
                 เวลานัดที่รพ.
               </Text>
-              <TextInput
-                style={styles.inputBox}
-                placeholder="เวลานัดที่รพ."
-                placeholderTextColor="#BDBDBD"
-                // onChangeText={text => setAge(text)}
-              />
+              <View style={styles.inputStyle}>
+                <View style={{flexDirection: 'row'}}>
+                  <View
+                    style={{
+                      alignSelf: 'center',
+                      marginRight: 5,
+                      marginLeft: 10,
+                    }}>
+                    <IconClock></IconClock>
+                  </View>
+                  <TextInput
+                    style={{
+                      height: '80%',
+                      width: '70%',
+                      alignSelf: 'center',
+                    }}></TextInput>
+                </View>
+              </View>
+              {/* <ViewTime></ViewTime> */}
             </View>
           </View>
           <Grid>
-            <Text>สถานที่รับ</Text>
-
-            {/* <Row>
-              <Col>
-                <TextInput
-                  style={styles.inputBox}
-                  placeholder="สถานที่รับ"
-                  placeholderTextColor="#BDBDBD"
-                  // onChangeText={text => setAge(text)}
-                />
-              </Col>
-            </Row> */}
-            <View style={{flexDirection: 'row'}}>
-              <View style={{flex: 4, flexDirection: 'row'}}>
-                <TextInput
-                  style={styles.inputBox}
-                  placeholder="สถานที่รับ"
-                  placeholderTextColor="#BDBDBD"
-                  // onChangeText={text => setAge(text)}
-                />
-              </View>
-              <View style={{alignSelf: 'flex-start'}}>
-                <Button
+            {/* <View
+              style={{
+                width: 220,
+                height: 240,
+                borderColor: '#E8E8E8',
+                borderWidth: 1,
+                alignSelf: 'center',
+              }}>
+              <Form style={{marginLeft: 15, marginRight: 15}}>
+                <View
                   style={{
-                    width: 51,
-                    height: 51,
-                    backgroundColor: '#fff',
-                    borderWidth: 1,
-                    borderColor: '#E8E8E8',
-                    borderRadius: 8,
-                  }}
-                  onPress={() => navigation.navigate('')}>
-                  <Icon name="search-sharp" style={styles.IconMain} />
+                    flexDirection: 'row',
+                    width: 173,
+                    height: 132,
+                    marginBottom: 20,
+                  }}></View>
+              </Form>
+              <View
+                style={{
+                  width: '100%',
+                  borderColor: '#F2F2F2',
+                  borderWidth: 1,
+                  justifyContent: 'flex-end',
+                }}>
+                <Form style={{marginLeft: 15, marginRight: 15}}>
+                  <Text style={{fontWeight: 'bold'}}>เวลารับ:</Text>
+                </Form>
+              </View>
+            </View> */}
+            {/* <ViewCalendar></ViewCalendar> */}
+
+            <Text>สถานที่รับ</Text>
+            <View style={styles.inputStyle}>
+              <View style={{flexDirection: 'row'}}>
+                <View
+                  style={{
+                    alignSelf: 'center',
+                    marginRight: 5,
+                    marginLeft: 10,
+                  }}>
+                  <IconLocation></IconLocation>
+                </View>
+                <TextInput
+                  style={{
+                    height: '80%',
+                    width: '78%',
+                    alignSelf: 'center',
+                  }}></TextInput>
+                <Button style={styles.ButtonStyle}>
+                  <Icon name="search" style={styles.IconStyle} />
                 </Button>
               </View>
             </View>
-            <Picker>
-              <Picker.Item label="สถานที่ไปรับและกลับที่เดียวกัน" />
-            </Picker>
             <View style={{flexDirection: 'row', marginBottom: 20}}>
-              <View
+              {/* <View
                 style={{
                   width: 20,
                   height: 20,
                   backgroundColor: '#18A0FB',
                   borderRadius: 3,
-                  borderColor: '#E8E8E8',
-                  borderWidth: 1,
-                }}></View>
-              <View>
-                <Text style={{marginLeft: 10}}>
-                  สถานที่ไปรับและกลับที่เดียวกัน
-                </Text>
-              </View>
+                }}></View> */}
+              <TouchableOpacity onPress={() => {}} style={{}}>
+                {Item.checked == true ? (
+                  <View style={styles.CheckBoxPress}></View>
+                ) : (
+                  <View style={styles.CheckBox}></View>
+                )}
+              </TouchableOpacity>
+              <Text style={{marginLeft: 10, alignSelf: 'center'}}>
+                สถานที่ไปรับและกลับที่เดียวกัน
+              </Text>
             </View>
             <Text style={{marginBottom: 10}}>โรงพยาบาล</Text>
-            <Row>
-              <Col>
+            <View style={styles.inputStyle}>
+              <View style={{flexDirection: 'row'}}>
+                <View
+                  style={{
+                    alignSelf: 'center',
+                    marginRight: 5,
+                    marginLeft: 10,
+                  }}>
+                  <IconLocation></IconLocation>
+                </View>
                 <TextInput
-                  style={styles.inputBox}
-                  placeholder="โรงพยาบาล"
-                  placeholderTextColor="#BDBDBD"
-                  // onChangeText={text => setAge(text)}
-                />
-              </Col>
-            </Row>
+                  style={{
+                    height: '80%',
+                    width: '78%',
+                    alignSelf: 'center',
+                  }}></TextInput>
+                <Button style={styles.ButtonStyle}>
+                  <Icon name="search" style={styles.IconStyle} />
+                </Button>
+              </View>
+            </View>
             <Text
               style={{
                 fontSize: 12,

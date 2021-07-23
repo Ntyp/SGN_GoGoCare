@@ -143,40 +143,6 @@ const Payment = ({navigation}) => {
               </Col>
             </Row>
           </Grid>
-          {/* <View
-            style={{
-              width: 326,
-              height: 70,
-              borderRadius: 8,
-              shadowColor: '#000',
-              shadowOffset: {width: 1, height: 1},
-              shadowOpacity: 0.5,
-              shadowRadius: 10,
-              elevation: 5,
-            }}>
-            <Grid>
-              <Row>
-                <Col>
-                  <Text>VISA</Text>
-                </Col>
-                <Col>
-                  <Text>**** **** **** 8043</Text>
-                </Col>
-                <Col>
-                  <View style={styles.GreenCircle}>
-                    <Icon name="checkmark-outline" style={styles.GreenIcon} />
-                  </View>
-                </Col>
-              </Row>
-              <Row>
-                <Col></Col>
-                <Col>
-                  <Text>Expires 10/25</Text>
-                </Col>
-                <Col></Col>
-              </Row>
-            </Grid>
-          </View> */}
 
           <Card style={styles.CardAddBank}>
             <CardItem>
@@ -240,7 +206,10 @@ const Payment = ({navigation}) => {
           </Card>
           <Card style={styles.CardAddBank}>
             <CardItem>
-              <Body
+              <View style={{flexDirection: 'row'}}>
+                <Text style={styles.TextBlue}>MOBILE BANKING</Text>
+              </View>
+              {/* <Body
                 style={{
                   flex: 1,
                   flexDirection: 'row',
@@ -250,7 +219,22 @@ const Payment = ({navigation}) => {
                 </Left>
                 <Body></Body>
                 <Right>
-                  <Picker
+                  <View>
+                    <Button
+                      style={{
+                        backgroundColor: '#fff',
+                        borderRadius: 5,
+                        width: '100%',
+                      }}>
+                      <Text style={{color: '#18A0FB', fontSize: 14}}>
+                        เลือกธนาคาร
+                      </Text>
+                    </Button>
+                  </View>
+                </Right>
+              </Body> */}
+            </CardItem>
+            {/* <Picker
                     selectedValue={Bank}
                     style={{height: 50, width: '100%'}}
                     onValueChange={(itemValue, itemIndex) =>
@@ -260,10 +244,7 @@ const Payment = ({navigation}) => {
                     <Picker.Item label="ไทยพาณิชย์" value="Scb" />
                     <Picker.Item label="กรุงเทพ" value="Bangkok" />
                     <Picker.Item label="กรุงไทย" value="KrungThai" />
-                  </Picker>
-                </Right>
-              </Body>
-            </CardItem>
+                  </Picker> */}
           </Card>
           <Card style={styles.CardAddBank}>
             <CardItem>
@@ -296,7 +277,7 @@ const Payment = ({navigation}) => {
                     alignSelf: 'center',
                     marginBottom: 20,
                   }}
-                  onPress={() => navigation.navigate('')}>
+                  onPress={() => navigation.navigate('RegisUserData3')}>
                   <Text style={{color: '#18a0fb', fontWeight: 'bold'}}>
                     กลับ
                   </Text>

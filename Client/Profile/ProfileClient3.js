@@ -29,7 +29,7 @@ import {
   CardItem,
 } from 'native-base';
 import {LogoGogo} from '../components/Svg/my-wallet-card';
-const ProfileClientSetting = ({navigation}) => {
+const ProfileClient3 = ({navigation}) => {
   const [Client, setClient] = useState({
     Name: 'นฤวดี ศรีสุวานนท์ ',
     Phone: '086-555xxxx',
@@ -118,9 +118,7 @@ const ProfileClientSetting = ({navigation}) => {
       marginLeft: 25,
     },
     Button: {
-      backgroundColor: '#fff',
-      borderWidth: 1,
-      borderColor: '#18A0FB',
+      backgroundColor: '#18A0FB',
       width: '90%',
       height: 50,
       borderRadius: 50,
@@ -204,9 +202,6 @@ const ProfileClientSetting = ({navigation}) => {
       marginBottom: 20,
       marginTop: 20,
     },
-    ColStyle: {paddingLeft: 20},
-    TextColStyle: {alignSelf: 'flex-start', marginLeft: 5, fontWeight: 'bold'},
-    TextMidStyle: {alignSelf: 'flex-start', marginLeft: 20},
   });
   return (
     <Container>
@@ -305,97 +300,88 @@ const ProfileClientSetting = ({navigation}) => {
       </View>
 
       <Content noShadow>
-        <Form>
-          <Grid>
-            <Row style={styles.RowStyle}>
-              <Col style={styles.ColStyle}>
-                <Text style={styles.TextColStyle}>ภาษา/Language</Text>
-              </Col>
-              <Col style={{paddingLeft: 20}}>
-                <Text style={styles.TextMidStyle}>ภาษาไทย</Text>
-              </Col>
-              <Col>
-                <Icon
-                  name="chevron-forward"
-                  style={{color: '#18A0FB', alignSelf: 'center'}}
-                  onPress={() => navigation.navigate('')}
-                />
-              </Col>
-            </Row>
+        <Form style={styles.FormStyle}>
+          <Text style={styles.TextHead}>ข้อมูลผู้ที่ต้องการการดูแล</Text>
+          <Card
+            style={{
+              width: 326,
+              height: 170,
+              borderRadius: 8,
+              alignSelf: 'center',
+              marginBottom: 30,
+            }}>
+            <CardItem>
+              <View style={{flex: 2}}>
+                <Text style={{fontSize: 18, fontWeight: 'bold'}}>
+                  {User.Name}
+                </Text>
+                <View style={{flexDirection: 'row'}}>
+                  <Text style={{fontSize: 14, fontWeight: '500'}}>
+                    เพศ {User.Sex}
+                  </Text>
+                  <Text
+                    style={{fontSize: 14, fontWeight: '500', marginLeft: 20}}>
+                    อายุ {User.Age} ปี
+                  </Text>
+                </View>
+              </View>
+              <View style={{flex: 1}}>
+                <View
+                  style={{
+                    width: 80,
+                    height: 80,
+                    backgroundColor: '#DADADA',
+                    borderRadius: 100,
+                  }}></View>
+              </View>
+            </CardItem>
 
-            <Row style={styles.RowStyle}>
-              <Col style={styles.ColStyle}>
-                <Text style={styles.TextColStyle}>ตั้งค่าแจ้งเตือน</Text>
-              </Col>
-              <Col style={{paddingLeft: 20}}>
-                <Text style={styles.TextMidStyle}>ตั้งค่าดั้งเดิม</Text>
-              </Col>
-              <Col>
-                <Icon
-                  name="chevron-forward"
-                  style={{color: '#18A0FB', alignSelf: 'center'}}
-                  onPress={() => navigation.navigate('')}
-                />
-              </Col>
-            </Row>
+            <Button
+              style={{
+                width: 153,
+                height: 51,
+                borderRadius: 100,
+                backgroundColor: '#18A0FB',
+                alignSelf: 'center',
+                justifyContent: 'center',
+              }}>
+              <Text style={{fontSize: 16, fontWeight: '700'}}>
+                ข้อมูลสุขภาพ
+              </Text>
+            </Button>
+          </Card>
 
-            <Row style={styles.RowStyle}>
-              <Col style={styles.ColStyle}>
-                <Text style={styles.TextColStyle}>เปลี่ยนรหัสผ่าน</Text>
-              </Col>
-              <Col style={{paddingLeft: 20}}>
-                <Text style={styles.TextMidStyle}>ไม่ได้ตั้งรหัสผ่าน</Text>
-              </Col>
-              <Col>
+          <Card style={styles.CardAddBank}>
+            <CardItem>
+              {/* <Body style={{flex: 1, flexDirection: 'row'}}>
+                <Left>
+                  <Text style={styles.TextBlue}>
+                    เพิ่มคนที่คุณต้องการให้ดูแล
+                  </Text>
+                </Left>
+                <Right>
+                  <Icon
+                    name="add"
+                    style={{color: 'rgba(24, 160, 251, 1)'}}
+                    onPress={() => navigation.navigate('AddCard')}
+                  />
+                </Right>
+              </Body> */}
+              <View style={{flex: 2}}>
+                <Text
+                  style={{fontSize: 16, color: '#18A0FB', fontWeight: 'bold'}}>
+                  เพิ่มคนที่คุณต้องการให้ดูแล
+                </Text>
+              </View>
+              <View>
                 <Icon
-                  name="chevron-forward"
-                  style={{color: '#18A0FB', alignSelf: 'center'}}
-                  onPress={() => navigation.navigate('')}
+                  name="add"
+                  style={{color: 'rgba(24, 160, 251, 1)'}}
+                  onPress={() => navigation.navigate('ProfileClient1')}
                 />
-              </Col>
-            </Row>
-
-            <Row style={styles.RowStyle}>
-              <Col style={styles.ColStyle}>
-                <Text style={styles.TextColStyle}>วิธีการใช้งาน</Text>
-              </Col>
-              <Col>
-                <Text style={styles.TextMidStyle}></Text>
-              </Col>
-              <Col>
-                <Icon
-                  name="chevron-forward"
-                  style={{color: '#18A0FB', alignSelf: 'center'}}
-                  onPress={() => navigation.navigate('')}
-                />
-              </Col>
-            </Row>
-
-            <Row style={styles.RowStyle}>
-              <Col style={styles.ColStyle}>
-                <Text style={styles.TextColStyle}>ติดต่อเพื่อช่วยเหลือ</Text>
-              </Col>
-              <Col>
-                <Text style={styles.TextMidStyle}></Text>
-              </Col>
-              <Col>
-                <Icon
-                  name="chevron-forward"
-                  style={{color: '#18A0FB', alignSelf: 'center'}}
-                  onPress={() => navigation.navigate('')}
-                />
-              </Col>
-            </Row>
-          </Grid>
-
-          <Button
-            block
-            style={styles.Button}
-            onPress={() => navigation.navigate('Welcome')}>
-            <Text style={{color: '#00a1ff', fontWeight: 'bold', fontSize: 16}}>
-              ออกจากระบบ
-            </Text>
-          </Button>
+              </View>
+            </CardItem>
+          </Card>
         </Form>
       </Content>
 
@@ -403,4 +389,4 @@ const ProfileClientSetting = ({navigation}) => {
     </Container>
   );
 };
-export default ProfileClientSetting;
+export default ProfileClient3;

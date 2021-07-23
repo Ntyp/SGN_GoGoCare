@@ -314,7 +314,18 @@ const ProfileClient1 = ({navigation}) => {
       <Content noShadow>
         <Form style={styles.FormStyle}>
           <Text style={styles.TextHead}>ข้อมูลสุขภาพผู้ที่ต้องการการดูแล</Text>
-          <ImgProfile></ImgProfile>
+          <View style={{textAlign: 'center', alignSelf: 'flex-end'}}>
+            <ImgProfile></ImgProfile>
+            <Text
+              style={{
+                fontSize: 10,
+                fontWeight: 'bold',
+                color: '#BDBDBD',
+                alignSelf: 'center',
+              }}>
+              แก้ไข
+            </Text>
+          </View>
           <View>
             <View
               style={{
@@ -323,6 +334,7 @@ const ProfileClient1 = ({navigation}) => {
                 borderRadius: 100,
                 backgroundColor: '#DADADA',
                 alignSelf: 'center',
+                marginBottom: 20,
               }}></View>
           </View>
           <Grid>
@@ -612,7 +624,7 @@ const ProfileClient1 = ({navigation}) => {
               borderWidth: 0.6,
               borderRadius: 8,
               fontSize: 16,
-              marginBottom: 40,
+              marginBottom: 20,
             }}
             placeholder=""
             placeholderTextColor="#BDBDBD"

@@ -33,7 +33,7 @@ import ProfileClient2 from './Client/Profile/ProfileClient2';
 import ProfileClientSetting from './Client/Profile/ProfileClientSetting';
 
 // Booking
-import Booking from './Client/Booking/Booking';
+import Booking from './Client/GoGoNow/Booking';
 
 //CareGiver
 

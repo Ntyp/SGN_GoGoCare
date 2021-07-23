@@ -36,5 +36,22 @@ const MyJobWave = () => {
     </Svg>
   );
 };
+const BigWave = () => {
+  return (
+    <Svg
+      width={327}
+      height={150}
+      viewBox="0 0 327 150"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <Path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0 12.8v128.151s68.261 20.36 163.5 0c95.239-20.359 163.5 0 163.5 0V6.337c-.129-.76-.324-1.394-.617-1.969a8.001 8.001 0 00-3.496-3.496C321.176 0 318.936 0 314.455 0H12.8C8.32 0 6.08 0 4.368.872A8 8 0 00.872 4.368C0 6.08 0 8.32 0 12.8z"
+        fill="#00A1FF"
+      />
+    </Svg>
+  );
+};
 
-export {HomeJobWave, MyJobWave};
+export {HomeJobWave, MyJobWave, BigWave};

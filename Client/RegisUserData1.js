@@ -45,6 +45,18 @@ const RegisUserData1 = ({navigation}) => {
       fontSize: 16,
       marginBottom: 16,
     },
+    inputBoxฺBig: {
+      width: '98%',
+      height: 50,
+      backgroundColor: '#FFFFFF',
+      paddingVertical: 10,
+      paddingHorizontal: 15,
+      borderColor: '#E8E8E8',
+      borderWidth: 0.6,
+      borderRadius: 8,
+      fontSize: 16,
+      marginBottom: 16,
+    },
     imgView: {
       flex: 1,
       flexDirection: 'column',
@@ -58,10 +70,6 @@ const RegisUserData1 = ({navigation}) => {
       borderColor: '#fff',
       alignSelf: 'center',
       backgroundColor: '#D1D5DB',
-    },
-    ContainerStyle: {
-      //   paddingLeft: 10,
-      //   paddingRight: 10,
     },
     IconBar: {
       color: '#C3C3C3',
@@ -79,6 +87,12 @@ const RegisUserData1 = ({navigation}) => {
       borderRadius: 8,
       justifyContent: 'center',
     },
+    ButtonStyle: {
+      width: 50,
+      height: 50,
+      backgroundColor: '#fff',
+      borderRadius: 8,
+    },
     TextButton: {
       color: '#BDBDBD',
     },
@@ -93,6 +107,7 @@ const RegisUserData1 = ({navigation}) => {
       color: '#BDBDBD',
     },
   });
+
   return (
     <Container style={styles.ContainerStyle}>
       <Header noShadow style={{backgroundColor: 'white', marginLeft: 0}}>
@@ -182,7 +197,7 @@ const RegisUserData1 = ({navigation}) => {
             <Row>
               <Col>
                 <TextInput
-                  style={styles.inputBox}
+                  style={styles.inputBoxฺBig}
                   placeholder="ชื่อ-นามสกุล"
                   placeholderTextColor="#BDBDBD"
                   // onChangeText={text => setAge(text)}
@@ -239,25 +254,16 @@ const RegisUserData1 = ({navigation}) => {
           <View style={{flex: 1, flexDirection: 'row'}}>
             <Picker
               selectedValue={Disease}
-              style={{height: 50, width: '80%'}}
+              style={{height: 50, width: '87%'}}
               onValueChange={(itemValue, itemIndex) => setDisease(itemValue)}>
               <Picker.Item label="โรคไต" value="Kidney" />
               <Picker.Item label="โรคความดัน" value="Hypertension" />
             </Picker>
 
-            <Button
-              style={{
-                width: 50,
-                height: 50,
-                backgroundColor: '#FFFFFF',
-                borderColor: '#E8E8E8',
-                borderWidth: 0.6,
-                alignSelf: 'flex-end',
-                justifyContent: 'center',
-              }}>
+            <Button style={styles.ButtonStyle}>
               <Icon
                 name="add"
-                style={{color: '#18A0FB'}}
+                style={{color: '#18A0FB', textAlign: 'center'}}
                 onPress={() => navigation.navigate('')}
               />
             </Button>
@@ -287,14 +293,12 @@ const RegisUserData1 = ({navigation}) => {
                 style={{
                   width: 50,
                   height: 50,
-                  backgroundColor: '#FFFFFF',
-                  borderColor: '#E8E8E8',
-                  borderWidth: 0.6,
-                  justifyContent: 'center',
+                  backgroundColor: '#fff',
+                  borderRadius: 8,
                 }}>
                 <Icon
                   name="add"
-                  style={{color: '#18A0FB'}}
+                  style={{color: '#18A0FB', textAlign: 'center'}}
                   onPress={() => navigation.navigate('')}
                 />
               </Button>
@@ -356,7 +360,7 @@ const RegisUserData1 = ({navigation}) => {
                   borderRadius: 8,
                   fontSize: 16,
                 }}
-                placeholder=""
+                placeholder="โปรดระบุยาที่แพ้"
                 placeholderTextColor="#BDBDBD"
                 // onChangeText={text => setAge(text)}
               />
@@ -449,18 +453,7 @@ const RegisUserData1 = ({navigation}) => {
           </Text>
 
           <TextInput
-            style={{
-              width: 341,
-              height: 50,
-              backgroundColor: '#FFFFFF',
-              paddingVertical: 10,
-              paddingHorizontal: 15,
-              borderColor: '#E8E8E8',
-              borderWidth: 0.6,
-              borderRadius: 8,
-              fontSize: 16,
-              marginBottom: 40,
-            }}
+            style={styles.inputBoxฺBig}
             placeholder=""
             placeholderTextColor="#BDBDBD"
             // onChangeText={text => setAge(text)}

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {ImgStatusNow} from '../../components/Svg/Client/Img-GoGoNow';
 import {ImgStatusLast} from '../../components/Svg/Client/Img-GoGoNow';
+import GogonowCard from '../../components/Svg/Client/Gogonow-Card';
 import FooterBar_Client from '../../components/Footer';
 import {View, StyleSheet, Image, TextInput, Picker} from 'react-native';
 import {
@@ -190,119 +191,7 @@ const Booking = ({navigation}) => {
               shadowRadius: 10,
               elevation: 5,
             }}></View> */}
-          <Card style={styles.CardSize}>
-            <CardItem>
-              <Left>
-                <View style={styles.Logo}>
-                  <Text style={{color: 'white', fontWeight: 'bold'}}>
-                    GoGo Care
-                  </Text>
-                </View>
-              </Left>
-              <Right>
-                <Text
-                  style={{
-                    color: 'rgba(24, 160, 251, 1)',
-                    fontSize: 14,
-                    fontWeight: 'bold',
-                    marginRight: 12,
-                  }}>
-                  CARD
-                </Text>
-                <Text
-                  style={{color: 'rgba(105, 105, 105, 1)', marginRight: 11}}>
-                  xxxx xxxx xxxx xxxx
-                </Text>
-              </Right>
-            </CardItem>
-            <CardItem>
-              <Left style={{flex: 1}}>
-                <View style={{flexDirection: 'row'}}>
-                  <Text
-                    style={{
-                      color: 'rgba(105, 105, 105, 1)',
-                      fontWeight: 'bold',
-                    }}>
-                    รายได้เดือน
-                  </Text>
-                  <Text
-                    style={{
-                      marginLeft: 0,
-                      paddingLeft: 0,
-                      color: 'rgba(24, 160, 251, 1)',
-                      fontWeight: 'bold',
-                    }}>
-                    พฤษภาคม
-                  </Text>
-                </View>
-              </Left>
-            </CardItem>
-
-            <CardItem style={styles.CardItemStyle}>
-              <Left></Left>
-              <Right>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    fontSize: 34,
-                    color: 'rgba(24, 160, 251, 1)',
-                    marginRight: 12,
-                  }}>
-                  0.00
-                </Text>
-              </Right>
-            </CardItem>
-
-            <CardItem style={styles.CardItemStyle}>
-              <Left>
-                <Button
-                  style={{
-                    width: 140,
-                    height: 50,
-                    borderRadius: 100,
-                    borderWidth: 1,
-                    borderColor: '#18A0FB',
-                    backgroundColor: '#fff',
-                    justifyContent: 'center',
-                  }}>
-                  <Text
-                    style={{
-                      color: '#18A0FB',
-                      fontSize: 16,
-                      fontWeight: 'bold',
-                      alignSelf: 'center',
-                    }}>
-                    โทรเลย
-                  </Text>
-                </Button>
-              </Left>
-              <Right>
-                <Button
-                  style={{
-                    width: 140,
-                    height: 50,
-                    borderRadius: 100,
-                    backgroundColor: '#18A0FB',
-                    justifyContent: 'center',
-                  }}>
-                  <Text
-                    style={{
-                      color: '#FFFFFF',
-                      fontSize: 16,
-                      fontWeight: 'bold',
-                      alignSelf: 'center',
-                    }}>
-                    แชทเลย
-                  </Text>
-                </Button>
-              </Right>
-            </CardItem>
-            <CardItem>
-              <Body>
-                <Text style={{alignSelf: 'center'}}>รายละเอียดเพิ่มเติม</Text>
-              </Body>
-            </CardItem>
-          </Card>
+          <GogonowCard></GogonowCard>
           <Text
             style={{
               fontSize: 16,

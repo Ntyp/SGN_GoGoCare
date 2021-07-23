@@ -1,76 +1,51 @@
 import React, {useState} from 'react';
 import FooterBar_Client from '../../components/Footer';
 import JobCard_Client from '../../components/Svg/Client/Confirm-Booking';
+import profile from '../../assets/images/profile.png';
+import CalendarForm from '../../components/Svg/calendarThumbnail';
+import {MyJobWave} from '../../components/Svg/Wave';
+import ConfirmBooking from '../../components/Svg/Client/Confirm-Booking';
 import {View, StyleSheet, Image, TextInput, Picker} from 'react-native';
 import {
   Container,
   Content,
   Text,
   Button,
-  Left,
-  Body,
-  Right,
   Icon,
   Header,
-  Footer,
-  FooterTab,
   Badge,
   Form,
-  Grid,
-  Row,
-  Col,
-  Card,
-  CardItem,
 } from 'native-base';
 const Confirm = ({navigation}) => {
-  const [Bank, setBank] = useState(''); //ธนาคาร
+  const [Patient, setPatient] = useState({
+    name: 'สุจิตรา',
+    lastname: 'ศรีสุวานนท์',
+    sex: 'หญิง',
+    age: 79,
+    location: 'โรงพยาบาลศิริราช',
+    time: '6:00',
+    day: 'พ.',
+    daynum: 12,
+    month: 'พ.ค.',
+  });
+
   const styles = StyleSheet.create({
-    GreenIcon: {
-      color: '#fff',
-      fontSize: 18,
-      alignSelf: 'flex-end',
-      marginTop: 2,
-      marginBottom: 2,
-      marginLeft: 2,
-      marginRight: 2,
-    },
-    GreenCircle: {
-      backgroundColor: '#06E775',
-      width: 23,
-      height: 23,
-      borderRadius: 300,
-      marginRight: 5,
-      shadowColor: '#000',
-      shadowOffset: {width: 1, height: 1},
-      shadowOpacity: 0.5,
-      shadowRadius: 10,
-      elevation: 5,
-    },
     TextBlue: {
       color: 'rgba(24, 160, 251, 1)',
       fontSize: 14,
       fontWeight: 'bold',
     },
-    CardAddBank: {
-      width: 360,
-      height: 60,
-      elevation: 5,
-      shadowColor: '#000',
-      shadowOffset: {width: 1, height: 1},
-      shadowOpacity: 0.5,
-      shadowRadius: 10,
-      borderColor: '#FFF',
-      borderRadius: 10,
-      overflow: 'hidden',
-      position: 'relative',
-      marginBottom: 20,
-    },
     IconBar: {
       color: '#C3C3C3',
     },
-    FooterBar: {
-      height: 85,
-      backgroundColor: 'rgba(249, 249, 249, 0.94)',
+    ButtonStyle: {
+      alignSelf: 'center',
+      borderRadius: 100,
+      width: 343,
+      height: 50,
+      justifyContent: 'center',
+      backgroundColor: '#18A0FB',
+      marginTop: 20,
     },
   });
   return (
@@ -78,27 +53,6 @@ const Confirm = ({navigation}) => {
       <Header
         noShadow
         style={{backgroundColor: 'white', marginLeft: 0, marginTop: 10}}>
-        {/* <Left style={{marginLeft: 13}}>
-          <Text style={{fontWeight: 'bold'}}>CONFIRM BOOKING</Text>
-        </Left>
-        <Right style={{marginRight: 23}}>
-          <Icon
-            name="notifications"
-            style={{color: '#BDBDBD', transform: [{rotate: '20deg'}]}}
-            onPress={() => navigation.navigate('')}
-          />
-          <Badge
-            style={{
-              position: 'absolute',
-              top: -9,
-              right: -10,
-              scaleX: 0.6,
-              scaleY: 0.6,
-              borderColor: 'white',
-            }}>
-            <Text style={{fontSize: 20}}>3</Text>
-          </Badge>
-        </Right> */}
         <View style={{flex: 2}}>
           <Text style={{fontWeight: 'bold', fontSize: 14}}>
             CONFIRM BOOKING
@@ -148,38 +102,14 @@ const Confirm = ({navigation}) => {
             }}>
             Go Health บริการพาไปพบแพทย์
           </Text>
-          {/* <View
-            style={{
-              height: 260,
-              width: 327,
-              backgroundColor: '#D1D5DB',
-              alignSelf: 'center',
-              justifyContent: 'flex-end',
-              borderRadius: 8,
-              marginBottom: 30,
-              shadowColor: '#000',
-              shadowOffset: {width: 1, height: 1},
-              shadowOpacity: 0.5,
-              shadowRadius: 10,
-              elevation: 5,
-            }}></View> */}
-          <JobCard_Client></JobCard_Client>
+          <ConfirmBooking></ConfirmBooking>
           <Text style={{fontSize: 16, fontWeight: 'bold', alignSelf: 'center'}}>
             หมายเลขการจอง G02024
           </Text>
           <Text style={{fontSize: 12, fontWeight: '500', alignSelf: 'center'}}>
             กรุณารอการยืนยันผู้ดูแลของคุณภายใน 4 ชั่วโมง
           </Text>
-          <Button
-            style={{
-              alignSelf: 'center',
-              borderRadius: 100,
-              width: 343,
-              height: 50,
-              justifyContent: 'center',
-              backgroundColor: '#18A0FB',
-              marginTop: 20,
-            }}>
+          <Button style={styles.ButtonStyle}>
             <Text style={{fontWeight: 'bold', fontSize: 16}}>
               ไปที่หน้าการจองของฉัน
             </Text>

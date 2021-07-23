@@ -278,5 +278,35 @@ const ImgStatusLast = ({current}) => {
     </Svg>
   );
 };
+const CorrectIcon = () => {
+  return (
+    <Svg
+      width={49}
+      height={49}
+      viewBox="0 0 49 49"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <G clipPath="url(#prefix__clip0)" filter="url(#prefix__filter0_d)">
+        <Path
+          d="M24.868 10.887c-7.71 0-13.981 6.271-13.981 13.98 0 7.71 6.271 13.982 13.98 13.982 7.71 0 13.982-6.272 13.982-13.981 0-7.71-6.272-13.981-13.981-13.981z"
+          fill="#06E775"
+        />
+        <Path
+          d="M31.954 22.681l-7.573 7.573a1.162 1.162 0 01-1.648 0l-3.786-3.786a1.164 1.164 0 010-1.647 1.163 1.163 0 011.647 0l2.963 2.962 6.75-6.749a1.164 1.164 0 111.647 1.648z"
+          fill="#FAFAFA"
+        />
+      </G>
+      <Defs>
+        <ClipPath id="prefix__clip0">
+          <Path
+            fill="#fff"
+            transform="translate(10.887 10.887)"
+            d="M0 0h27.962v27.962H0z"
+          />
+        </ClipPath>
+      </Defs>
+    </Svg>
+  );
+};
 
-export {ImgStatusNow, ImgStatusLast};
+export {ImgStatusNow, ImgStatusLast, CorrectIcon};
